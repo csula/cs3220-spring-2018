@@ -35,6 +35,15 @@ have the backend server to define the resource name, type, exchange rate. And
 on the front end service running the incremental game while reading the backend
 server for the resource and its storage.
 
+## Problems
+
+Software engineering is all about solving problems. In this section, I want to
+summarize a couple problems I had in summer and what I want to accomplish:
+
+* JavaScript wasn't covered in depth enough for students to use it effectively
+* Architecture wasn't taught well. Many students didn't know what architecture they were following even to the end.
+* Database abstraction can be cleaner. As for now, getting simple connection remains a lot more code snippets to resolve
+
 ## Fragments
 
 It will be damn difficult for students who just start leaning web development

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation demo</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Amaranth|Fira+Sans|Muli" rel="stylesheet">
+    <link rel="stylesheet" href="static/main.css">
+</head>
+<body>
+    <div id="main"></div>
+    <script src="static/main.js"></script>
+    <script>
+        (function() {
+            const node = document.getElementById('main');
+            const app = Elm.Main.embed(node);
+        })();
+    </script>
+</body>
+</html>
