@@ -15,10 +15,10 @@ how to implement techniques learned in class.
 ## Logistics
 
 - **Instructor** Hsiang-Yu (Eric) Liao [rcliao01@gmail.com](mailto:rcliao01@gmail.com)
-- **Lecture** Saturday 10:00 AM to 4:00 PM
-- **Office Hours** Saturday 9:30 AM to 10:00 AM, 4:00 PM to 5:00 PM or online 24/7
-- **Office Hours Location** E&T A-309
-- **Location** E&T A-309
+- **Lecture** Saturday 4:00 p.m. to 8:10 p.m.
+- **Office Hours** Saturday 10:00 a.m. to 11:40 a.m., 8:10 p.m. to 8:40 p.m. or online 24/7
+- **Office Hours Location** E&T A-220
+- **Location** E&T A-220
 - **Text Book** No text book is required as all required reading will be hosted on Github.
 
 ## Course Objectives
@@ -29,7 +29,6 @@ how to implement techniques learned in class.
 * Java Servlet
 * JSP & JSTL
 * MySQL
-* Vue.js
 * Java Jersey framework
 
 ## Grading Allocation
@@ -61,7 +60,7 @@ you are free to ask for helps in order to finish the lab in time.
 others' solution is considered as cheating.
 
 > If you are not sure what is helping. Consider yourself as a mentor for other
-students. You are helping them by **teaching** them. While teaching, hopefully,
+students. You are helping them by **teaching** them. While teaching,
 you can learn some from it as well!
 
 There is only one rule to the lab -- all lab works are due in class unless notify otherwise.
@@ -70,7 +69,7 @@ due by the end of class.
 
 ## Midterm/final rules
 
-Rules for midterm & final are very similar to lab --
+Rules for midterm & final are similar to lab --
 
 * Open book/note
 * Open internet
@@ -79,8 +78,8 @@ Rules for midterm & final are very similar to lab --
 
 Except the following difference:
 
-* No discussion/IMs with your friends&colleagues
-	* Midterm&final is supposed to be testing individuals
+* No discussion/messages with your friends&colleagues
+	* Midterm&final are supposed to be testing individuals
 * Not like lab, I will not be as helpful
 
 ## ADA Statement
@@ -100,17 +99,22 @@ The schedule below is tentative and is subject to change.
 
 | Week # [date]      | Topic     | Notes |
 | ------------------ | --- | --- |
-| 1  [06/03]         | [Introduction][1] | Set up environment |
-| 2  [06/10]         | [HTML & CSS][2] | [Lab 1][16] |
-| 3  [06/17]         | [Intro to JavaScript][3] | [Lab 2][17] |
-| 4  [06/24]         | [Intro to JavaScript][3], [Java Servlet][4] | [Lab 2][17] |
-| 5  [07/01]         | [Java Servlet][4] | [Lab 3][18], [Homework 1][12] |
-| 6  [07/08]         | [Midterm][5], [JSP & JSTL][6] | [Lab 4][19] |
-| 7  [07/15]         | [JSP & JSTL][6] | (No in class room meeting) |
-| 8  [07/22]         | [Database][7] | [Lab 5][20], [Homework 2][13] |
-| 9  [07/29]         | [Database][7] | [Lab 6][21], [Homework 3][14] |
-| 10 [08/05]         | [Modern Java Web framework][10] | [Lab 7][22] + [Extra Credit (See lab 7)][22], [Homework 4][15] |
-| Final [08/12]      | [Final][11] | [Lab 8][23], Similar to midterm, due in class |
+| 1  [01/27]         | [Introduction][1] | Set up environment |
+| 2  [02/03]         | [HTML & CSS][2] |  |
+| 3  [02/10]         | [HTML & CSS][2] | [Lab 1][16] |
+| 4  [02/17]         | [Intro to JavaScript][3] |  |
+| 5  [02/24]         | [Intro to JavaScript][3] | [Lab 2][17] |
+| 6  [03/03]         | [Java Servlet][4] | [Lab 3][18], [Homework 1][12] |
+| 7  [03/10]         | [JSP][6] | [Lab 4][19] |
+| 8  [03/17]         | [Midterm][5] |  |
+| 9  [03/24]         | [JSTL][6] | [Lab 5][20] |
+| 10 [03/31]         | Spring Break | No class |
+| 11 [04/07]         | [MySQL][7] | [Homework 2][13] |
+| 12 [04/14]         | [Database][7] & [Web Architecture][8] | [Lab 6][21] |
+| 13 [04/21]         | [Modern Java Web framework][10] | [Homework 3][14] |
+| 14 [04/28]         | [JavaScript Framework][9] | [Lab 7][22] |
+| 15 [05/12]         | [JavaScript Framework][9] | [Lab 8][23], [Homework 4][15] |
+| Final [05/19]      | [Final][11] |  |
 
 > [Lab 8][23] will be a make up lab so you can choose one of the worst lab you
 have done before and work on it so I will re-grade it again.
@@ -138,4 +142,3 @@ have done before and work on it so I will re-grade it again.
 [21]: notes/labs/lab6.md
 [22]: notes/labs/lab7.md
 [23]: notes/labs/lab8.md
-

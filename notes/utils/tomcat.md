@@ -1,7 +1,7 @@
 # Tomcat Servlet Survival Guide
 
-The biggest frustration of the web development is probably the starting point.
-The server set up!
+The biggest frustration of the web development is probably the starting point –
+the server set up.
 
 In this article, we will be going through how to set up tomcat application server
 with Servlets in several ways. You are free to pick and choose the way you prefer
