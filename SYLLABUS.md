@@ -15,7 +15,9 @@ how to implement techniques learned in class.
 ## Logistics
 
 - **Instructor** Hsiang-Yu (Eric) Liao [rcliao01@gmail.com](mailto:rcliao01@gmail.com)
-- **Lecture** Saturday 4:00 p.m. to 8:10 p.m.
+- **Course Schedule**
+   * Lecture: Saturday 4:00 p.m. to 5:40 p.m.
+   * Laboratory: Saturday 5:40 p.m. to 8:10 p.m.
 - **Office Hours** Saturday 10:00 a.m. to 11:40 a.m., 8:10 p.m. to 8:40 p.m. or online 24/7
 - **Office Hours Location** E&T A-220
 - **Location** E&T A-220
@@ -111,9 +113,10 @@ The schedule below is tentative and is subject to change.
 | 10 [03/31]         | Spring Break | No class |
 | 11 [04/07]         | [MySQL][7] | [Homework 2][13] |
 | 12 [04/14]         | [Database][7] & [Web Architecture][8] | [Lab 6][21] |
-| 13 [04/21]         | [Modern Java Web framework][10] | [Homework 3][14] |
-| 14 [04/28]         | [JavaScript Framework][9] | [Lab 7][22] |
-| 15 [05/12]         | [JavaScript Framework][9] | [Lab 8][23], [Homework 4][15] |
+| 13 [04/21]         | [Modern Java Web Framework][10] | [Homework 3][14] |
+| 14 [04/28]         | [Modern Java Web Framework][10] | [Lab 7][22] |
+| 15 [05/05]         | [JavaScript Framework][9] | [Homework 4][15] |
+| 16 [05/12]         | [JavaScript Framework][9] | [Lab 8][23] |
 | Final [05/19]      | [Final][11] |  |
 
 > [Lab 8][23] will be a make up lab so you can choose one of the worst lab you
