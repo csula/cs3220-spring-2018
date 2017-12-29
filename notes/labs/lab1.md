@@ -107,7 +107,7 @@ ends up with the following styles:
 
 Here is the basic UI starting point,
 
-![../imgs/project/home.png](lab 1 mockup)
+![lab 1 mockup](../imgs/project/home.png)
 
 > Although UI mockup is provided, students are welcome to come up with own
 design as long as all the requirements above are satisfied.
