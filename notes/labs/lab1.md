@@ -2,17 +2,20 @@
 
 ## Deliverables
 
-* Game.html [2pt]
-	* Navigation
-	* Header
-	* Footer
-	* Le button to increment counter
-	* Resource list
-* Resource.html [2pt]
-	* Form to purchase resource
-	* Available resource list
+* index.html [2pt]
+    * Navigation
+    * Header
+    * Footer
+    * Le button to increment counter
+    * Resource list
+* options.html [1pt]
+    * Keeping same layout as index.html
+    * Options to adjust game
+* about.html [1pt]
+    * Keeping same layout as index.html
+    * Explain the game idea
 * app.css [1pt]
-	* Styles used for the pages
+    * Styles used for the pages
 * Pushes changes to Github pages
 * CSNS file showing URL of Github pages & Github pull request
 
@@ -39,7 +42,8 @@ access the site from my Android phone). And the navigation is also mobile friend
 ## Description
 
 In this lab, we want to create all customer facing pages for the incremental game.
-This includes the homepage (game.html) and resources.html.
+This includes the homepage (index.html) and about page (about.html) as well as
+options page (options.html).
 
 In addition to create all these pages, we also need to ensure the navigation
 between pages is done correctly and therefore, it is important for you to
@@ -56,12 +60,11 @@ In additional to the HTML pages above, you will also need to create a separate
 should have this `app.css` imported to apply styles to each component accordingly.
 
 When finish, you should have quite nice looking customer facing portion of the
-incremental game (allowing customer to see button to increment counter later and
-buy automatic resource in the resources.html page).
+incremental game – able to see the interfaces of the game without any interactions.
 
 ## Requirements
 
-### Game.html
+### index.html
 
 In this page, you want to have the page structure set up properly (including the
 header, navigation, footer and the main content area) along with importing the
@@ -70,30 +73,25 @@ CSS in the right place (header preferably).
 In other word, your page structure should be set up correctly so that other
 page can just fill in the blank in the body area (template like).
 
-### Resource.html
+### about.html
 
-Food menu needs to display a couple informations:
+Keeping the same layout as the `index.html` above – as having the same header and
+footer.
 
-* A list of food on menu
-	* At least three food items need to be displayed
-* Food order form
-* Confirmation on the order
-* Should also have the same header/footer/navigation from the index.html
-	* Copy and paste from index.html is fine for this lab
+In the body area, please write up to 2 paragraph of what your game is about.
 
-### Statuses.html
+### options.html
 
-Order statuses page needs to show customer what is their order statuses. You will
-need to show the following information:
+Keeping the same laoyut as the `index.html` above – as having the same header
+and footer.
 
-* A list of customer orders
-	* Timestamp (when they order)
-	* Food item (what they order)
-	* Status indicator [queue, in progress, ready to pick up, completed]
-* Should also have the same header/footer/navigation from the index.html
-	* Copy and paste from index.html is fine for this lab
+In the body area, please add up a button to export game state and a button to
+import button game state.
 
-### App.css
+> We will not implement the functionality here just yet but the user interface
+> need to be there
+
+### app.css
 
 You will need to have the minimum styles for the above requirements. Each
 component (e.g. food item in the menu) should be styled here. Therefore, that
@@ -105,10 +103,11 @@ ends up with the following styles:
 	* Navigation
 * Le Button
 * Story book component
-* Purchase resource block
 * Resource list
 
 Here is the basic UI starting point,
+
+![../imgs/project/home.png](lab 1 mockup)
 
 > Although UI mockup is provided, students are welcome to come up with own
 design as long as all the requirements above are satisfied.
@@ -145,7 +144,7 @@ mkdir lab1
 cd lab1
 ```
 
-And then you should start by creating the `game.html` in this "lab1" folder
+And then you should start by creating the `index.html` in this "lab1" folder
 including the following code snippet to begin with:
 
 
