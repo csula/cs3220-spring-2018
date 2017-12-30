@@ -72,9 +72,11 @@ In specific to the incremental game project, we should design:
 
 * button
 * picking fonts good for number
-* forms to control resource
-* card to separate types of resource
-* a dedicated area for showing logs (pre element).
+* forms to manage generators
+* card to separate types of generator
+    * Modifier
+    * Autonomous
+* a dedicated area for showing story (pre element).
 * [optional] animation to show number changes
 
 > Another interesting finding I had this year (2017) was that students tend to
@@ -128,6 +130,22 @@ students how to debug their JavaScript code through logging and debugger console
 > Many students had reliance on integrated development environment (IDE) last year
 > and not able to understand what functions they can call in JavaScript (because
 > there is no intellisence in normal text editor for JavaScript.
+
+#### Big Number Related Libraries
+
+* https://github.com/MikeMcl/decimal.js/
+* https://github.com/erosson/swarm-numberformat
+
+#### Business Model
+
+While designing the business model isn't the hardest part. The challenge lives
+in sharing the models between client side and server side. Considering the long
+running processes will be running on the client side, the business model should
+probably live on the client side. Server side becomes quite … tricky as a content
+management system.
+
+Maybe server side should handle the meta data of the business model while the
+client side handles the behavior based on the meta data.
 
 ### Backend Service (1 to 2 weeks)
 
