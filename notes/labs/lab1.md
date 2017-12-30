@@ -2,6 +2,7 @@
 
 ## Deliverables
 
+* theme.txt
 * index.html [2pt]
     * Navigation
     * Header
@@ -63,7 +64,9 @@ should have this `app.css` imported to apply styles to each component accordingl
 When finish, you should have a nice looking incremental game – able to see the
 interfaces of the game without any interactions.
 
-## Picking a theme
+## Requirements
+
+### theme.txt
 
 To start, here are a few example themes:
 
@@ -98,7 +101,7 @@ Story:
 * Generators are autonomous unit that generates resource
 * Story are like checkpoints with description after user gets certain value of resource
 
-## Requirements
+
 
 ### index.html
 
