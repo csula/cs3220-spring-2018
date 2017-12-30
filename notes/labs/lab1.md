@@ -29,25 +29,26 @@ Github Pull Request URL:
 https://github.com/csula-students/cs-3220-spring-2018-rcliao/pull/1
 ```
 
-### Bonus [2pt]
-
-If your website is mobile friendly, you will get additional 2 points.
-
-> Mobile friendly being that it's not small on mobile screen and optimize the UI
-> so that user only need to do vertical scroll
-
-Mobile friendly being it shows correct resolution on the mobile screen (if I
-access the site from my Android phone). And the navigation is also mobile friendly.
-
 ## Description
 
-In this lab, we want to create all customer facing pages for the incremental game.
-This includes the homepage (index.html) and about page (about.html) as well as
-options page (options.html).
+We want to build an [incremental game][1] throughout this semester. First thing
+is to build the *user interface* layer and *picking a theme* for the game.
 
-In addition to create all these pages, we also need to ensure the navigation
-between pages is done correctly and therefore, it is important for you to
-create a navigation bar in header.
+What is incremental game you ask? Incremental game, at its core, is to have user
+click on a button and increment its value. After having over certain value, user
+can purchase the generator to generate value automatically without user interaction
+afterward.
+
+You mentioned something about theme earlier, what do you mean? Even though students
+will build the same genre of the game (incremental game), each student may or may
+not build the same game. Some of the game content could be different from one to
+the other. Theme should separate students' work a bit. In example, one student
+may build a dungeon related theme while the other may build a BitCoin related
+theme. In this assignment, while designing the user interface, students are also
+required to pick their incremental game theme.
+
+Once a theme is selected, students are also required to code up their project
+in HTML & CSS (see deliverables above).
 
 > Please note that although we have learned the existence of CSS framework 
 like Material or Bootstrap in class earlier, refrain yourself from using it for
@@ -59,8 +60,43 @@ In additional to the HTML pages above, you will also need to create a separate
 `app.css` file that contains all your styling changes. In all these pages, you
 should have this `app.css` imported to apply styles to each component accordingly.
 
-When finish, you should have quite nice looking customer facing portion of the
-incremental game – able to see the interfaces of the game without any interactions.
+When finish, you should have a nice looking incremental game – able to see the
+interfaces of the game without any interactions.
+
+## Picking a theme
+
+To start, here are a few example themes:
+
+* Cookie clicker
+* Dungeon crawler
+* Farmville
+
+After picking a theme, you will need to define a few core components as following
+format:
+
+```
+Theme:
+# Cookie clicker
+
+Resource:
+* Cookie
+
+Generators:
+* Cursor
+* Grandmom
+* Cookie Factory
+
+Story:
+* Cookie? Click on the button to create cookies.
+* Your cookies are talked about for miles around.
+* C is for cookie. And that is good enough for me.
+```
+
+![Terminology concept relationship](../imgs/project/concept.png)
+
+* Resource is the primary unit of the game.
+* Generators are autonomous unit that generates resource
+* Story are like checkpoints with description after user gets certain value of resource
 
 ## Requirements
 
@@ -163,3 +199,5 @@ including the following code snippet to begin with:
 ```
 
 Happy hacking!
+
+[1]: https://en.wikipedia.org/wiki/Incremental_game
