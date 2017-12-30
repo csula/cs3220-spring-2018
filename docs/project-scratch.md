@@ -1,4 +1,4 @@
-# Project brain storm
+# Project Brain Storm and Thoughts
 
 ## Introduction
 
@@ -130,6 +130,22 @@ students how to debug their JavaScript code through logging and debugger console
 > Many students had reliance on integrated development environment (IDE) last year
 > and not able to understand what functions they can call in JavaScript (because
 > there is no intellisence in normal text editor for JavaScript.
+
+#### Code Modularity
+
+Last year, I designed the whole JavaScript with a goal of minimum dependencies.
+This leads to creating the whole JavaScript in a single file. Single JavaScript
+file leading to not-testable code and not-readable code.
+
+This year, I want to develop a unit test habit from the JavaScript code to Java
+code. Thus, I introduce a couple tooling to the starter code – bundler with
+Webpack, transpiler with BabelJS and unit test with Mocha and Chai. With these
+tools, it becomes necessary to install Node.js and npm in the runtime. This means
+I have to go over installing Node.js and npm this year.
+
+Plus, with this push of modern tool, it also leads to the usage of es6 module
+(easier to export and import code without learning the CommonJS module – which is
+usually used on the Node.js backend development purpose).
 
 #### Big Number Related Libraries
 
