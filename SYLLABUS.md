@@ -104,14 +104,14 @@ The schedule below is tentative and is subject to change.
 | 1  [01/27]         | [Introduction][1] | Set up environment |
 | 2  [02/03]         | [HTML & CSS][2] |  |
 | 3  [02/10]         | [HTML & CSS][2] | [Lab 1][16] |
-| 4  [02/17]         | [Intro to JavaScript][3] |  |
-| 5  [02/24]         | [Intro to JavaScript][3] | [Lab 2][17] |
-| 6  [03/03]         | [Java Servlet][4] | [Lab 3][18], [Homework 1][12] |
+| 4  [02/17]         | [Intro to JavaScript][3] | [Lab 2][17] |
+| 5  [02/24]         | [Intro to JavaScript][3] | [Lab 3][18] |
+| 6  [03/03]         | [Java Servlet][4] | [Homework 1][12] |
 | 7  [03/10]         | [JSP][6] | [Lab 4][19] |
 | 8  [03/17]         | [Midterm][5] |  |
-| 9  [03/24]         | [JSTL][6] | [Lab 5][20] |
+| 9  [03/24]         | [JSTL][6] | [Lab 5][20], [Homework 2][13] |
 | 10 [03/31]         | Spring Break | No class |
-| 11 [04/07]         | [MySQL][7] | [Homework 2][13] |
+| 11 [04/07]         | [MySQL][7] |  |
 | 12 [04/14]         | [Database][7] & [Web Architecture][8] | [Lab 6][21] |
 | 13 [04/21]         | [Modern Java Web Framework][10] | [Homework 3][14] |
 | 14 [04/28]         | [Modern Java Web Framework][10] | [Lab 7][22] |
