@@ -2,8 +2,9 @@
 
 ## Deliverables
 
-* button component [2 pts]
-* Counter component [3 pts]
+* Button component [2 pts]
+* Counter component [2 pts]
+* Ability to increment counter from reducer [1pt]
 
 ## Description
 
@@ -21,7 +22,7 @@ to implement the core of the game – click on the button to increment counter.
 ## Starter code
 
 You can start your code from downloading the source code from this repository
-under branch `lab1`:
+under branch `lab2`:
 
 https://github.com/rcliao/cookie-clicker
 

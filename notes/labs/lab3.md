@@ -2,8 +2,8 @@
 
 ## Deliverables
 
-* Storybook Component [2 pts]
 * Generator component  [3 pts]
+* Reducer implementation to add generator to state [2 pt]
 
 ## Descriptions
 
