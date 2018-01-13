@@ -111,10 +111,10 @@ The schedule below is tentative and is subject to change.
 | 8  [03/17]         | [Midterm][5] |  |
 | 9  [03/24]         | [JSP][6] | [Lab 5][20], [Homework 2][13] |
 | 10 [03/31]         | Spring Break | No class |
-| 11 [04/07]         | [JSTL][6] |  |
-| 12 [04/14]         | [MySQL][7] | [Lab 6][21] |
-| 13 [04/21]         | [Database][7] | [Homework 3][14] |
-| 14 [04/28]         | [Web Architecture][8] & [Java Web Framework][10] | [Lab 7][22] |
+| 11 [04/07]         | [MySQL][7] |  |
+| 12 [04/14]         | [Database][7] | [Lab 6][21] |
+| 13 [04/21]         | [Web Architecture][8] & [Java Web Framework][10] | [Homework 3][14] |
+| 14 [04/28]         | [Java Web Framework][10] | [Lab 7][22] |
 | 15 [05/05]         | [Front end JavaScript Framework][9] | [Homework 4][15] |
 | 16 [05/12]         | [Front end JavaScript Framework][9] | [Lab 8][23] |
 | Final [05/19]      | [Final][11] |  |
