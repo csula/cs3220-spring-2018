@@ -109,7 +109,7 @@ The schedule below is tentative and is subject to change.
 | 6  [03/03]         | [Java Servlet][4] | [Homework 1][12] |
 | 7  [03/10]         | [Java Servlet][4] | [Lab 4][19] |
 | 8  [03/17]         | [Midterm][5] |  |
-| 9  [03/24]         | [JSP][6] | [Lab 5][20], [Homework 2][13] |
+| 9  [03/24]         | [JSP & JSTL][6] | [Lab 5][20], [Homework 2][13] |
 | 10 [03/31]         | Spring Break | No class |
 | 11 [04/07]         | [MySQL][7] |  |
 | 12 [04/14]         | [Database][7] | [Lab 6][21] |
