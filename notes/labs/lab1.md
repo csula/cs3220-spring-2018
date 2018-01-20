@@ -4,17 +4,11 @@
 
 * theme.txt
 * index.html [2pt]
-    * Navigation
     * Header
     * Footer
     * Le button to increment counter
     * Resource list
-* options.html [1pt]
-    * Keeping same layout as index.html
-    * Options to adjust game
-* about.html [1pt]
-    * Keeping same layout as index.html
-    * Explain the game idea
+    * Generator list
 * app.css [1pt]
     * Styles used for the pages
 * Pushes changes to Github pages
@@ -101,8 +95,6 @@ Story:
 * Generators are autonomous unit that generates resource
 * Story are like checkpoints with description after user gets certain value of resource
 
-
-
 ### index.html
 
 In this page, you want to have the page structure set up properly (including the
@@ -111,24 +103,6 @@ CSS in the right place (header preferably).
 
 In other word, your page structure should be set up correctly so that other
 page can just fill in the blank in the body area (template like).
-
-### about.html
-
-Keeping the same layout as the `index.html` above – as having the same header and
-footer.
-
-In the body area, please write up to 2 paragraph of what your game is about.
-
-### options.html
-
-Keeping the same laoyut as the `index.html` above – as having the same header
-and footer.
-
-In the body area, please add up a button to export game state and a button to
-import button game state.
-
-> We will not implement the functionality here just yet but the user interface
-> need to be there
 
 ### app.css
 
@@ -139,10 +113,10 @@ ends up with the following styles:
 * Layout on the index.html
 	* Header
 	* Footer
-	* Navigation
 * Le Button
 * Story book component
 * Resource list
+* Generator list
 
 Here is the basic UI starting point,
 
@@ -186,7 +160,6 @@ cd lab1
 
 And then you should start by creating the `index.html` in this "lab1" folder
 including the following code snippet to begin with:
-
 
 ```html
 <!DOCTYPE html>
