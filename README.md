@@ -29,6 +29,54 @@ this class we will be using Java quite a lot on the back end. If you are not
 experienced enough in Java programming. Please find time to catch up. A gentle
 suggestion would be studying your old text book!
 
+## Schedule
+
+The schedule below is tentative and is subject to change.
+
+| Week # [date]      | Topic     | Notes |
+| ------------------ | --- | --- |
+| 1  [01/27]         | [Introduction][1] | Set up environment |
+| 2  [02/03]         | [HTML & CSS][2] |  |
+| 3  [02/10]         | [HTML & CSS][2] | [Lab 1][16] |
+| 4  [02/17]         | [Intro to JavaScript][3] | [Lab 2][17] |
+| 5  [02/24]         | [Intro to JavaScript][3] | [Lab 3][18] |
+| 6  [03/03]         | [Java Servlet][4] | [Homework 1][12] |
+| 7  [03/10]         | [Java Servlet][4] | [Lab 4][19] |
+| 8  [03/17]         | [Midterm][5] |  |
+| 9  [03/24]         | [JSP & JSTL][6] | [Lab 5][20], [Homework 2][13] |
+| 10 [03/31]         | Spring Break | No class |
+| 11 [04/07]         | [MySQL][7] |  |
+| 12 [04/14]         | [Database][7] | [Lab 6][21] |
+| 13 [04/21]         | [Web Architecture][8] & [Java Web Framework][10] | [Homework 3][14] |
+| 14 [04/28]         | [Java Web Framework][10] | [Lab 7][22] |
+| 15 [05/05]         | [Front end JavaScript Framework][9] | [Homework 4][15] |
+| 16 [05/12]         | [Front end JavaScript Framework][9] | [Lab 8][23] |
+| Final [05/19]      | [Final][11] |  |
+
+[1]: notes/introduction.md
+[2]: notes/html_css.md
+[3]: notes/javascript.md
+[4]: notes/java_servlet.md
+[5]: notes/midterm.md
+[6]: notes/jsp_jstl.md
+[7]: notes/database.md
+[8]: notes/web_architectures.md
+[9]: notes/front_end_framework.md
+[10]: notes/modern_java_web.md
+[11]: notes/final.md
+[12]: notes/homeworks/homework1.md
+[13]: notes/homeworks/homework2.md
+[14]: notes/homeworks/homework3.md
+[15]: notes/homeworks/homework4.md
+[16]: notes/labs/lab1.md
+[17]: notes/labs/lab2.md
+[18]: notes/labs/lab3.md
+[19]: notes/labs/lab4.md
+[20]: notes/labs/lab5.md
+[21]: notes/labs/lab6.md
+[22]: notes/labs/lab7.md
+[23]: notes/labs/lab8.md
+
 ## Resources
 
 ### Class
