@@ -116,7 +116,7 @@ The schedule below is tentative and is subject to change.
 | 13 [04/21]         | [Web Architecture][8] & [Java Web Framework][10] | [Homework 3][14] |
 | 14 [04/28]         | [Java Web Framework][10] | [Lab 7][22] |
 | 15 [05/05]         | [Front end JavaScript Framework][9] | [Homework 4][15] |
-| 16 [05/12]         | [Front end JavaScript Framework][9] | [Lab 8][23] |
+| 16 [05/12]         | [Front end JavaScript Framework][9], [Intro to Docker][24] | [Lab 8][23] |
 | Final [05/19]      | [Final][11] |  |
 
 [1]: notes/introduction.md
@@ -142,3 +142,4 @@ The schedule below is tentative and is subject to change.
 [21]: notes/labs/lab6.md
 [22]: notes/labs/lab7.md
 [23]: notes/labs/lab8.md
+[24]: notes/docker.md
