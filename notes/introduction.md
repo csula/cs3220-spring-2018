@@ -28,11 +28,18 @@ Go to [Syllabus.md](../SYLLABUS.md) for detail.
 ## Overview
 
 
-Hello! Welcome to the web programming course!
+Hello, Welcome to the web programming course.
 
-In this class, we will have a lot of fun building things together. Specifically,
-we will be building a restaurant application, or so called project, throughout
-the entire semester.
+We will be building a lot of fun web stuff together – specifically on an incremental
+game, or so called project throughout entire semester.
+
+What is an incremental game you ask?
+
+Incremental game in a brief is a game where user click on a button to increment
+a number. Most classic example is [cookie clicker](http://orteil.dashnet.org/cookieclicker/).
+
+In this year, we will be building the game and the game framework (to create
+different theme of incremental game through content control from the backend).
 
 ### What is web application?
 
@@ -49,18 +56,19 @@ lower cost in development. And it's highly available to large amount of users
 ### What are we learning in this class?
 
 We will be learning how to build server web applications from the front-end to
-back-end and potentially to some server operations all in one class. I'll expect
-students to know how to build an application from the start to the end!
+back-end and potentially to some server operations all in one class. By the end
+of the class, I expect students to know how to build an application from the
+start to the end.
 
-However, this class isn't really specialized in any of the fields. By the end of
+However, this class isn't specialized in any of the fields. By the end of
 this class, you may know enough of the everything to get started. If you wish,
-you may still learn more in the field you would like. See [developer road map][1]
-for checking out possible routes.
+you may explore more in any of the fields you would like. See [developer road map][1]
+for checking out possible routes of being web developers.
 
 ### Overall web architecture
 
-Before we start talking the technical details, lets step back a bit to look at
-overall architecture for web applications.
+Before we start talking the technical details, lets take a step back to look at
+overall big picture (architecture) for web applications.
 
 ![Architecture](imgs/architecture.png)
 
@@ -74,11 +82,11 @@ on these three layers. Front-end is usually running on the customers' environmen
 (whether a mobile phone, desktop, laptop or any other devices). Think of it as
 an application that runs in the user browser (Chrome). Back-end, on the other hand,
 is usually running on some sort of servers (whether it's on the cloud or some
-machines). Since the user doesn't interact with the server directly, it means you
+machines). Since users cant interact with the server directly, this means you
 have a lot more control on the server and allows you to do many different things,
-including security related stuff and so on. While the database is usually 
-separated from the back-end, due to the fact you want data to be available 
-regardless of the server state. In example, there may be times you absolutely need
+including security access control and so on. The database server is usually 
+separated from the back-end due to the fact you want data to be available 
+regardless of the back-end server state. In example, there may be times you absolutely need
 to restart your application server like deployment. If data is all stored in memory
 on the back-end server, data will be **lost** when back-end server restarts.
 Therefore, it is necessary to ensure the data lives in different server.
@@ -91,7 +99,7 @@ different purposes and are designed differently.
 
 HTML represents the content on the screen while CSS address the presentation 
 changes like styling. In example, you have have a `h1` tag with content like
-`hello world`. But without the CSS, you will have a very plain output displayed
+`hello world`. But without the CSS, you will have a plain output displayed
 in the browser. With CSS, you can make this `h1` tag to have a different color,
 font-size or even position differently.
 
@@ -103,18 +111,18 @@ it may not accomplish anything. However, with the code below:
 <button>Click me</button>
 ```
 
-You may add JavaScript **on click** functionalities to do something like ...
-bring up a modal window!!
+You may add JavaScript **on click** functionalities to do something like …
+bring up a modal window to alert user.
 
 ```js
 button.addEventListener('click', () => {
-	alert('Hello there!');
+	alert('Hello there');
 });
 ```
 
 On the back end, you have router to determine which controller to call. In
 example, you may have a router that takes URL like
-`GET /api/v1/restaurants/menu` to call menu system.
+`GET /api/v1/game/generators/meta` to call menu system.
 
 And then on the menu controller you may start by doing validation first. After
 validating request is valid, you can start sending the request to the database.
@@ -122,19 +130,17 @@ validating request is valid, you can start sending the request to the database.
 In the database access layer, you will be constructing SQL queries to create/update
 data in the database.
 
-Finally, in the database, you can store all the information safely!
+Finally, in the database, you can store all the information safely.
 
 ### How the web works
 
-But then, how does the front-end application communicate to the server.
+How does the front-end application communicate to the server.
 Fortunately, this communication has been standardized by HTTP (Hypertext Transfer
-Protocol). You may check out [this wiki article] for more detail.
-
-In short, HTTP works in this way.
+Protocol). You may check out [this wiki article](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) for more detail.
 
 ![HTTP request&response](imgs/http-request-response.png)
 
-In specific, user may use browser like Chrome to **request** information from the
+User may use browser like Chrome to **request** information from the
 server and server **responses** with information based on the user request.
 
 You may ask, how does server know what information user is requesting for?
@@ -150,10 +156,10 @@ For how DNS works, you can check out this comic -- https://howdns.works/ep1/
 URL is spec'ed into several parts:
 
 * protocol
-* host name/ip
+* host name/IP
 * path
 
-Take this URL for example: https://github.com/csula/cs3220-summer-2017
+Take this URL for example: https://github.com/csula/cs3220-sprint-2018
 
 Protocol being `https` and host name being `github.com` while path being
 `csula/cs3220-summer-2017`
@@ -257,7 +263,7 @@ well as many functionalities for developers (e.g. change content & style).
 
 We will cover more of what DOM can do when we dive into JavaScript section.
 
-Meanwhile, you may read this document to get a head start ... 
+Meanwhile, you may read this document to get a head start …
 https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
 
 ### DOM Tree

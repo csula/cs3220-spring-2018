@@ -9,7 +9,7 @@
 
 ## Note to students
 
-Since this is the first week and first very lab, we will do a practice exercise
+Since this is the first week and first lab, we will do a practice exercise
 to get you ready for the actual lab. Even though this lab is non-graded, I 
 strongly recommend you to finish this lab.
 
@@ -19,12 +19,12 @@ We want to start simple by creating a couple HTML components and show them on th
 Github pages. This exercise will ensure you to have Git/Github as well as the
 text editor set up in order to do the HTML & CSS programming.
 
-Hopefully, after this exercise, you will get a feeling of the whole laboratory.
+After this exercise, you will get a feeling of the whole laboratory.
 
-> Remember, if you are lost in any of the step, feel free to ask questions!
+> Remember, if you are lost in any of the step, feel free to ask questions.
 
 In concrete, in this exercise, we want to set ourselves up to our restaurant
-application. The very first step we want to do is to create the building block
+application. The first step we want to do is to create the building block
 of the front end (components).
 
 ## Requirements
@@ -34,10 +34,10 @@ of the front end (components).
 * Create a table component
 	* Display a list of recipes 
 	* Create a image component
-		* Show a food image!
+		* Show a food image
 * Create a form component
 	* Form to create a new recipes
-	* Remember to use the button we created earlier above!
+	* Remember to use the button we created earlier above
 * Push changes to Github pages
 * In the Github page, it should display all components created above.
 
@@ -82,7 +82,7 @@ start hacking!
 
 ### First component -- Button
 
-The very first component we want to create is a simple button. Lets start simple.
+The first component we want to create is a simple button. Lets start simple.
 
 A button can be started like below:
 
