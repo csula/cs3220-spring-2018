@@ -36,10 +36,11 @@ game, or so called project throughout entire semester.
 What is an incremental game you ask?
 
 Incremental game in a brief is a game where user click on a button to increment
-a number. Most classic example is [cookie clicker](http://orteil.dashnet.org/cookieclicker/).
+a number. Most classic example is [cookie clicker](http://orteil.dashnet.org/cookieclicker/)
+while the other one is the [universal peperclips](www.decisionproblem.com/paperclips/index2.html)
 
-In this year, we will be building the game and the game framework (to create
-different theme of incremental game through content control from the backend).
+In this year, we will be building the game and the game framework to create
+different theme of incremental game through content control from the backend.
 
 ### What is web application?
 
