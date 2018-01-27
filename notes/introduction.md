@@ -378,7 +378,7 @@ and push changes to Github pages.
 
 Please click on this link to create your student repository:
 
-https://classroom.github.com/assignment-invitations/2f6346dbfa2062c422938b850dc2eac0
+https://classroom.github.com/a/ar3pUKJo
 
 And here is the exercise 1 link:
 
