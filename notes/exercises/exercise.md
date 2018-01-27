@@ -9,8 +9,8 @@
 
 ## Note to students
 
-Since this is the first week and first lab, we will do a practice exercise
-to get you ready for the actual lab. Even though this lab is non-graded, I 
+Since this is the first week and the first lab, we will do a practice exercise
+to get you ready for the actual lab. Even though this lab is non-graded, I
 strongly recommend you to finish this lab.
 
 ## Description
@@ -23,20 +23,18 @@ After this exercise, you will get a feeling of the whole laboratory.
 
 > Remember, if you are lost in any of the step, feel free to ask questions.
 
-In concrete, in this exercise, we want to set ourselves up to our restaurant
+In concrete, in this exercise, we want to set ourselves up to our game
 application. The first step we want to do is to create the building block
-of the front end (components).
+of the front end – components.
 
 ## Requirements
 
 * Create a button component
 	* Ensure to have different modifiers (primary and secondary)
 * Create a table component
-	* Display a list of recipes 
-	* Create a image component
-		* Show a food image
+	* Display a list of items
 * Create a form component
-	* Form to create a new recipes
+	* Form to create/edit a generator/event
 	* Remember to use the button we created earlier above
 * Push changes to Github pages
 * In the Github page, it should display all components created above.
@@ -69,7 +67,7 @@ some dummy content inside first so that we can see something.
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>CS 3220 Practice Lab</title>
 </head>
 <body>
 	<h1>Hello world!</h1>
@@ -80,7 +78,7 @@ some dummy content inside first so that we can see something.
 From here, you can open up this `index.html` in your favorite text editor and
 start hacking!
 
-### First component -- Button
+### First component – Button
 
 The first component we want to create is a simple button. Lets start simple.
 
@@ -106,11 +104,10 @@ select color by Google Material team:
 
 https://material.io/color/
 
-### Second component -- Table of recipes
+### Second component -- Table of generators
 
-In this component, you want to start Googling around to find your favorite
-type of food and its recipes. When you get a list of them (at least 3), you will
-need to create a table to show them!
+We will explain *generators* concept starting next week. For now, follow the mock
+up and define three items as below.
 
 You can start as followed:
 
@@ -119,15 +116,25 @@ You can start as followed:
 	<thead>
 		<tr>
 			<th>Name</th>
-			<th>Picture</th>
-			<th>Ingredients</th>
+			<th>Rate</th>
+			<th>Cost</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td>Hamburger</td>
-			<td><img src="hamburger.png" alt=""></td>
-			<td>1 pound of ground beef ...</td>
+			<td>Grandma</td>
+			<td>5</td>
+			<td>10</td>
+		</tr>
+		<tr>
+			<td>Factory</td>
+			<td>10</td>
+			<td>50</td>
+		</tr>
+		<tr>
+			<td>Mine</td>
+			<td>20</td>
+			<td>200</td>
 		</tr>
 	</tbody>
 </table>
@@ -138,7 +145,7 @@ your table!
 
 ```css
 table {
-	border: 1px solid #red;
+	border: 1px solid red;
 }
 tr {
 	background-color: #ccc;
@@ -181,7 +188,6 @@ git add .
 
 # Commit changes
 git commit -m "{Describe your changes}"
-# should bring up a vim editor for you to enter text editor
 
 git push
 ```
@@ -189,4 +195,4 @@ git push
 Once you pushes all your changes to Github repository. Then, you 
 can go ahead and configure out your own Github settings.
 
-![Github pages settings](imgs/github-pages-settings.png)
+![Github pages settings](../imgs/github-pages-settings.png)
