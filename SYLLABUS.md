@@ -47,11 +47,14 @@ how to implement techniques learned in class.
 * A-: 90 to 93
 * B+: 85 to 89
 * B: 80 to 84
-**Graduate students are required to obtain a grade 80 or above to pass the course**
 * B-: 77 to 79
 * C+: 74 to 76
 * C: 70 to 73
-**Undergraduate students are required to obtain a grade 70 or above to pass the course**
+* C-: 67 to 79
+* D+: 64 to 66
+* D: 60 to 69
+* D-: 55 to 59
+* F: 0 to 54
 
 ## Lab rules
 
