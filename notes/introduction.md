@@ -212,6 +212,7 @@ their development environment as early as possible.
 
 * [Git](https://git-scm.com/downloads)
 * [Git tutorial](https://github.com/csula/Utilities/blob/master/tutorials/git.md)
+* [Git Video to follow](https://asciinema.org/a/PKpaz1kpJWE3inR5Xhh8EfDJ7)
 
 > Please. Windows users, download Git and use the Git bash than windows command
 line.
