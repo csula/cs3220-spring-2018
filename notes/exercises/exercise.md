@@ -7,6 +7,13 @@
 * Form component (styled)
 * Submit Github pages URL to CSNS under exercise
 
+Submission format:
+
+```
+My Github page URL:
+https://csula-students.github.io/cs-3220-spring-2018-rcliao/
+```
+
 ## Note to students
 
 Since this is the first week and the first lab, we will do a practice exercise
