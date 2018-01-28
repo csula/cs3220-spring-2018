@@ -83,10 +83,6 @@ The schedule below is tentative and is subject to change.
 ### Class
 
 * [Syllabus](SYLLABUS.md)
-* [Classroom chat room](https://csulacs3220summer2017.slack.com/)
-
-> If you don't have access to the chat room, please ask me in person because I
-will have to send you an invitation.
 
 ### Recommended reading
 
