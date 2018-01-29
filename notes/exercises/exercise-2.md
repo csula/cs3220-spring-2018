@@ -25,9 +25,9 @@ These are:
 
 The provided mockups can be found below:
 
-![admin info](../project/admin-info.png)
-![admin events](../project/admin-events.png)
-![admin generators](../project/admin-generators.png)
+![admin info](../imgs/project/admin-info.png)
+![admin events](../imgs/project/admin-events.png)
+![admin generators](../imgs/project/admin-generators.png)
 
 ## Technical
 
