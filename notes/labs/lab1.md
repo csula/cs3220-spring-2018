@@ -121,7 +121,6 @@ ends up with the following styles:
 Here is the basic UI starting point,
 
 ![homepage mockup](../imgs/project/home.png)
-![options mockup](../imgs/project/options.png)
 
 > Although UI mockup is provided, students are welcome to come up with own
 design as long as all the requirements above are satisfied.

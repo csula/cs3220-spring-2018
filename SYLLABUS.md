@@ -98,14 +98,14 @@ Cheating on assignments and exams will not be tolerated. All parties involved
 will receive a grade of **F** for the course and be reported to the Computer 
 Science Department.
 
-## Course Schedule
+## Schedule
 
 The schedule below is tentative and is subject to change.
 
 | Week # [date]      | Topic     | Notes |
 | ------------------ | --- | --- |
-| 1  [01/27]         | [Introduction][1] | Set up environment |
-| 2  [02/03]         | [HTML & CSS][2] |  |
+| 1  [01/27]         | [Introduction][1] | Set up environment, [Exercise 1][25] |
+| 2  [02/03]         | [HTML & CSS][2] | [Exercise 2][26] |
 | 3  [02/10]         | [HTML & CSS][2] | [Lab 1][16] |
 | 4  [02/17]         | [Intro to JavaScript][3] | [Lab 2][17] |
 | 5  [02/24]         | [Intro to JavaScript][3] | [Lab 3][18] |
@@ -146,3 +146,5 @@ The schedule below is tentative and is subject to change.
 [22]: notes/labs/lab7.md
 [23]: notes/labs/lab8.md
 [24]: notes/docker.md
+[25]: notes/exercises/exercise.md
+[26]: notes/exercises/exercise-2.md
