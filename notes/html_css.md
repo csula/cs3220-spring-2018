@@ -13,6 +13,7 @@
 	* CSS Syntax
 * DOM
 * Responsive design
+    * Flexbox
 * CSS Frameworks
 * CSS Mythology
 
@@ -199,7 +200,7 @@ Example:
 Hyperlinks are probably by far one of the most important elements in the web.
 Besides, without hyperlinks, how does pages form a internet **web**.
 
-A very basic hyperlink example can be like below:
+A basic hyperlink example can be like below:
 
 ```html
 <a href="https://google.com">google.com</a>
@@ -305,6 +306,7 @@ ones I used:
 * Description list
 * Blockquote
 * Inline quote
+* Preformatted text
 
 #### Description list
 
@@ -333,6 +335,21 @@ Blockquote is useful when you are referencing to other places.
 
 Also you can use `<q>` to do inline quote
 
+#### Preformatted text
+
+Preformatted text allows you to write "preformatted text" which is being presented
+exactly as how it is written.
+
+> it's commonly used to represent source code
+
+```html
+<pre>
+body {
+    font-size: 16px;
+}
+</pre>
+```
+
 ### Semantic HTML
 
 Before we move onto the next part of HTML (website structure), I want to spend
@@ -348,18 +365,21 @@ Moreover, HTML following good standard also provides good usability and
 accessibility out of box. In example, Edlio (my company) builds websites for
 schools and it's our goal to make sure the website provides ADA compliance.
 To do so, we will need to make sure the website is at least keyboard navigable.
-We accomplish this by making sure our HTML is following semantic HTML!
+We accomplish this by making sure our HTML is following semantic HTML.
 
 You can find semantic HTML article below:
 https://codepen.io/mi-lee/post/an-overview-of-html5-semantics
 
 ### Document & website structure
 
-* Header
-* Navigation
-* Main content
-* Side bar
-* Footer
+Followed by the semantic HTML, the first common use case of semantic HTML is on
+document structure as listed below:
+
+* Header `<header>`
+* Navigation `<nav>`
+* Main content `<main>`
+* Side bar `<aside>`
+* Footer `<footer>`
 
 ![Common web page structure](imgs/page-structure.png)
 
@@ -379,6 +399,10 @@ footer. What would you love to put in these area?
 
 ## Debugging
 
+In programming, it's important to keep iteration small and getting early
+feedback. Luckily, in web development, front end development is usually
+easy to debug the code through developer console as below.
+
 ![Chrome debugging basic example](imgs/chrome-debugging.png)
 
 ## CSS Intro
@@ -390,13 +414,13 @@ footer. What would you love to put in these area?
 Credit: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/How_CSS_works
 
 By far the most important image I've learned about CSS before is shown above.
-Browser as render engine is actually very predictable if you know how it parses
-the HTML and go from there.
+Browser as render engine is actually predictable if you know how it parses
+the HTML and how it parses CSS rules to form CSSOM.
 
 Browser starts by evaluating the HTML and form a DOM tree. While it's building
 the DOM tree, it will also actively fetch for the information out of DOM nodes.
 Some DOM node may require browser to make additional requests (e.g. images, link
-to fetch external CSS, JavaScript files ... etc.). From the request to fetch for
+to fetch external CSS, JavaScript files … etc.). From the request to fetch for
 CSS data, it will use the CSS response to construct CSSOM (CSS object model).
 
 With the CSSOM and DOM, browser then can match the CSS and its selected DOM to
@@ -544,7 +568,7 @@ input[type="text"] {
 
 ### Values
 
-On the CSS property, you can have various different units:
+On the CSS property, you can have a couple units:
 
 * Numeric units
 	* Pixels
