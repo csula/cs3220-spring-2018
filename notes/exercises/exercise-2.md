@@ -36,4 +36,24 @@ HTML pages. One is called `admin-info`, one called `admin-events` and last one
 called `admin-generators`.
 
 Although functionalities does not need to work just yet. It's important to have
-the HTML and CSS there for the sake of this assignment.
+the HTML and CSS there for the sake of this exercise.
+
+### Functional requirements
+
+Students are welcome to change their design on what they think it's the best for the
+project under these functional requirements:
+
+* On the game information page, user should be able to update the game name
+* On the events meta information page, user should be able to create new meta containing the following information
+    * Event name
+    * Event description
+    * Event trigger at
+* On the events meta information page, user should be able to see a list of events that was created
+* On the generator meta page, user should be able to create new generator containing the following information
+    * Generator name
+    * Generator rate
+    * Generator base cost
+    * Generator unlock at
+    * Generator description
+* On the generator meta page, user should be able to see a list of generators that was created
+* On every page (game information, event meta & generator meta), user should see a *navigation bar* to go between pages
