@@ -19,15 +19,17 @@
 
 ### Lab
 
-* Create restaurant application pages
-	* Index
-		* Header
-		* Navigation
-		* Footer
-	* Order status
-	* Food menu
-	* Recipes
-	* Order
+#### [Exercise 2](./exercises/exercise-2.md)
+
+* Create Incremental Game administration pages
+    * Game information
+    * Events meta
+    * Generator meta
+
+#### [Lab 1](./labs/lab1.md)
+
+* Create the game public facing page
+    * Implement base on mockup
 
 ## Intro to HTML
 
@@ -61,7 +63,8 @@ Reference: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_H
 </article>
 ```
 
-All above combine to establish an **element**.
+All above combine to establish an **element** under this element, there are two
+child elements under the `artitle` element.
 
 ### Block vs Inline elements
 
@@ -630,7 +633,7 @@ div within another div, you can set absolute position like:
 	height: 300px;
 }
 
-// absolute center with position absolute is hard!
+// absolute center with position absolute is hard.
 .child {
 	position: absolute;
 	left: 50%;
@@ -683,7 +686,7 @@ In example,
 }
 ```
 
-Also, you may find more detail on the CSS animation here ... https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations
+Also, you may find more detail on the CSS animation here … https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations
 
 You may find libraries like [animate.css](https://daneden.github.io/animate.css/)
 to be useful.
@@ -693,7 +696,7 @@ to be useful.
 
 CSS stands for Cascading Style Sheet, which indicates the importance of cascade.
 
-At very basic, the CSS rule order matters but there are a lot more than just
+At basic, the CSS rule order matters but there are a lot more than just
 the order of declaration. We can simplify the CSS order as below:
 
 * Important
