@@ -11,4 +11,4 @@ started with `git`
 
 ## Github pull request
 
-http://g.recordit.co/VRSqwvgcRW.gif
+![Gif for opening pull request](http://g.recordit.co/VRSqwvgcRW.gif)
