@@ -11,6 +11,10 @@
 * Intro to CSS
 	* CSS Selector
 	* CSS Syntax
+* Exercise sample
+    * [box-sizing](https://css-tricks.com/box-sizing/)
+    * [Table styling](https://css-tricks.com/complete-guide-table-element/)
+    * Basic layout
 * DOM
 * Responsive design
     * Flexbox
