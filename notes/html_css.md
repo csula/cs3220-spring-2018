@@ -874,3 +874,4 @@ Without further due, BEM is as followed:
 ## References:
 
 * List of CSS properties: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+* https://medium.com/actualize-network/modern-css-explained-for-dinosaurs-5226febe3525
