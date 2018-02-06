@@ -549,27 +549,29 @@ input[type="text"] {
 	font-size: 18px;
 }
 
-// pseudo-element
+/* pseudo-element */
 .some-class:hover {
 	background-color: #f00;
 }
 
 .some-class.some-other-class {
-	// combine two classes to be more specific
+	/* combine two classes to be more specific */
 }
 
 .class-1,
 .class-2 {
-	// you can also apply style to multiple elements at once
+	/* you can also apply style to multiple elements at once */
 }
 
 .parent .child {
-	// space separated is different than comma
-	// space means you want to apply of child under parent
+	/**
+	 * space separated is different than comma
+	 * space means you want to apply of child under parent
+	 */
 }
 
 .parent > .child {
-	// or if you know the child is "directly" under parent, you can add ">"
+	/* or if you know the child is "directly" under parent, you can add ">" */
 }
 ```
 
@@ -666,7 +668,7 @@ value as RGB like below:
 	background-color: rgb(255, 0, 0);
 }
 
-// if you want transparent background color!
+// if you want transparent background color
 .overlay {
 	background-color: rgba(0, 0, 0, 0.3);
 }
@@ -711,7 +713,7 @@ Look at following example:
 
 ```html
 <p class="better">This is a paragraph.</p>
-<p class="better" id="winning">One selector to rule them all!</p>
+<p class="better" id="winning">One selector to rule them all</p>
 ```
 
 ```css
@@ -732,7 +734,7 @@ p {
 }
 ```
 
-Note that the second paragraph will be overwrited.
+Note that the second paragraph will be overwritten.
 
 ### CSS Specificity
 
@@ -873,5 +875,6 @@ Without further due, BEM is as followed:
 
 ## References:
 
+* List of HTML elements: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 * List of CSS properties: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
 * https://medium.com/actualize-network/modern-css-explained-for-dinosaurs-5226febe3525
