@@ -782,18 +782,44 @@ You can read more on the web design with fonts in https://www.smashingmagazine.c
 #### Example typography styles
 
 ```css
+html {
+    font-size: 62.5%; /* reset back to 10px */
+    font-family: Avenir Next,Helvetica,Arial,Sans-Serif;
+}
+
 body {
-	font-size: 16px;
+    font-size: 1.8rem;
+    line-height: 1.618;
+    max-width: 38em;
+    margin: auto;
+    color: #4a4a4a;
+    background-color: #f9f9f9;
+    padding: 1.3rem;
+}
+
+@media (max-width: 684px) {
+    body {
+        font-size: 1.53rem;
+    }
+}
+@media (max-width: 382px) {
+    body {
+        font-size: 1.35rem;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
-	line-height: 2em;
-	margin-bottom: 1em;
-}
-
-p {
-	line-height: 1.5em;
-	margin-bottom: 1em;
+  line-height: 1.1;
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: 700;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 ```
 
@@ -807,13 +833,64 @@ Besides the spacing, it's common that developers need to position elements on th
 you need a fab button showing at the bottom right corner of the web page. You might consider using `position: absolute;` or
 `position: relative;` to position this button properly.
 
+```css
+.relative-container {
+    position: relative;
+    width: 10em;
+    height: 8em;
+}
+
+.relative-container .absolute-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+```
+
 Besides positioning the button at certain point of the page, you will commonly need to make the certain element "floating".
 By floating, I meant aligning the element to be on the right or left. In this scenario, I want to show the image of the news
 article on the left of the article content. I will need to apply `float: left;` on the news image.
 
+```css
+.floating-image.left {
+    float: left;
+}
+```
+
 Recently, web standard introduces "flexbox". This helps web developers to position the element even better and easier than
 floating and positioning. Take me for example, I only use flexbox now to position component elements (especially when I need
 to center certain element!).
+
+To explain flexbox, the simplest way to understand it is to play with common layouts like below:
+
+```css
+.flex-container {
+    display: flex;
+}
+
+.flex-container.column {
+    flex-direction: column;
+}
+```
+
+
+
+#### Case study
+
+One case for flexbox is to center a single element at the center of page like
+below:
+
+```css
+.center.flex-container {
+    justify-content: center;
+    align-items: center;
+}
+```
+
+#### Flexbox resources
+
+https://medium.freecodecamp.org/an-animated-guide-to-flexbox-d280cf6afc35 this article
+contains a lot of animated Gif explaining flexbox
 
 You can learn more on the flexbox from the following exercise: http://flexboxfroggy.com/
 
@@ -826,7 +903,9 @@ https://blog.prototypr.io/design-for-programmers-d38c56982cd0
 
 ## Response design
 
-Use `em` over `px` as unit
+Use `em` over `px` as unit because it's easier to scale things all together.
+
+> Also, it's a lot easier to make website responsive (and looks nice in mobile)
 
 https://css-tricks.com/why-ems/
 
