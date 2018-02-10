@@ -2,8 +2,8 @@
 
 ## Deliverables
 
-* theme.txt
-* index.html [2pt]
+* theme.txt [1pt]
+* index.html [3pt]
     * Header
     * Footer
     * Le button to increment counter
@@ -18,10 +18,10 @@ Example CSNS file format:
 
 ```
 Application URL:
-https://csula-students.github.io/cs-3220-spring-2018-rcliao/
+https://csula-students.github.io/cs-3220-spring-2018-rcliao/lab1/
 
 Github Pull Request URL:
-https://github.com/csula-students/cs-3220-spring-2018-rcliao/pull/1
+https://github.com/csula-students/cs-3220-spring-2018-rcliao/pull/2
 ```
 
 ## Description
@@ -97,12 +97,12 @@ Story:
 
 ### index.html
 
-In this page, you want to have the page structure set up properly (including the
-header, navigation, footer and the main content area) along with importing the
-CSS in the right place (header preferably).
+We want to build our game user interface under the `index.html`. In this page,
+we want to have title, story area, main resource counter and an area to purchase
+a list of generators (see mockup below).
 
-In other word, your page structure should be set up correctly so that other
-page can just fill in the blank in the body area (template like).
+Although the functionalities doesn't need to work, please aim to provide clean
+interface as showing below.
 
 ### app.css
 
