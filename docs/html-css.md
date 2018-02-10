@@ -34,6 +34,9 @@
 
 ## CSS Intro
 
+![Family Guy CSS Frustration](https://78.media.tumblr.com/0087c631daa98f7929b4d312730c5ea0/tumblr_ox6nphXCxp1us6uk0o1_1280.gif)
+
+
 ### Syntax
 
 ```css
@@ -50,13 +53,13 @@ h1 { // selector
 
 ### Selectors
 
-* Id
-* Class
-* Tag
-* Value attribute
-* Pseudo-elements
-* Combinators
-* Multiple selectors
+* Id `#id`
+* Class `.class`
+* Tag `tag`
+* Value attribute `tag[attr="value"]`
+* Pseudo-elements `tag:pseudo`
+* Combinators `.class1.class2`
+* Multiple selectors `.class1, .class2`
 
 
 Selectors combinator:
