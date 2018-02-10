@@ -85,6 +85,7 @@ The schedule below is tentative and is subject to change.
 ### Class
 
 * [Syllabus](SYLLABUS.md)
+* [Slides](https://csula.github.io/cs3220-spring-2018)
 
 ### Recommended reading
 
