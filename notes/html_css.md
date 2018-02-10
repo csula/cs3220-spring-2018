@@ -11,7 +11,7 @@
 * Intro to CSS
 	* CSS Selector
 	* CSS Syntax
-* Exercise sample
+* [Exercise discussion](exercises/exercise-2-discussion.md)
     * [box-sizing](https://css-tricks.com/box-sizing/)
     * [Table styling](https://css-tricks.com/complete-guide-table-element/)
     * Basic layout
