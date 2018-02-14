@@ -74,7 +74,7 @@ document.querySelector('p')
 You should notice the message changes from "Please check your console!" to
 "Hello JavaScript from CS-3220".
 
-So what happened?
+What happened?
 
 We change the HTML content by first using [querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) API to find out
 the right HTML node.
@@ -280,7 +280,6 @@ listener, you will need a event. To add a submit listener, you will need a event
 Events are used for JavaScript to listen for certain things happening in browser.
 The most obvious one is "click" event like below:
 
-
 ```html
 <button id="click_me">button</button>
 ```
@@ -394,7 +393,6 @@ Classes declaration is interesting since it brought our favorite Object Oriented
 thinking into JavaScript. Pre-ES6, you will need to do prototype inheritance.
 Now with the classes declaration, you can define object and inherit pretty well!
 
-
 ```javascript
 class Shape {
     get area() {
@@ -493,7 +491,7 @@ import {multiply} from 'math';
 console.log(multiply(2, 3));
 ```
 
-### Summary
+### Caveat of ES6
 
 ES6 is amazing step for the JavaScript as a programming language. Although ES6
 is amazing, you have to be aware that not all browser supports all functions for
@@ -609,6 +607,12 @@ interface and behavior elements.
 
 ### Example component
 
+In the following example, we will start by plain old JavaScript component first.
+And we will create the same component in WebComponent Spec by extending from
+custom element.
+
+#### Plain Old JavaScript
+
 ```javascript
 class RGBSqaure {
     /**
@@ -651,13 +655,67 @@ class RGBSqaure {
 }
 ```
 
+#### WebComponent
+
+```javascript
+class RGBSquare extends window.HTMLElement {
+    constructor () {
+        // this is the "DOM" of what is created, e.g. <rgb-square>
+        this.colors = ['r', 'g', 'b'];
+        this.colorIndex = -1; // no color
+        // use closure to create consistent function reference
+        this.onClickEvent = () => this._updateColor();
+    }
+
+    connectedCallback () {
+        this.root.addEventListener('click', this.onClick);
+    }
+
+    disconnectedCallback () {
+        this.root.removeEventListener('click', this.onClick);
+    }
+
+    // Same methods as above
+    _updateColor () {
+        const oldClass = this.colorClass(this.colorIndex);
+        const newClass = this.colorClass(++this.colorIndex);
+        if (oldClass) {
+            this.classList.remove(oldClass);
+        }
+        this.classList.add(newClass);
+    }
+
+    colorClass (i) {
+        if (i < 0) {
+            return '';
+        }
+        return this.colors[i];
+    }
+}
+```
+
 Before we move onto detail, you might be thinking why go such long route for 
 defining this extra class? Everything can be done without the component class
-and just do usual JavaScript code.
+and just do the querySelector, click-event binding and classList.
 
-The problem of that approach is -- it tends to create spaghetti code. And it's
+In specific:
+
+```javascript
+const squrares = document.querySelectorAll('.rbq-square');
+squares.forEach(square => {
+    square.colors = ['r', 'g', 'b'];
+    square.addEventListener('click', () => {
+    });
+});
+```
+
+The problem of that approach is – it tends to create spaghetti code. And it's
 a nightmare to maintain such code! Therefore, it is necessary for our sanity
 to follow some sort of pattern so our code becomes easier to maintain and refactor.
+
+Also, you create a reusable piece of code by limiting the logic to be done following
+the component. In example, to re-use this color square, you only need to apply
+the same component somewhere else rather than *copying and pasting*.
 
 ### What if JavaScript need to do render?
 
