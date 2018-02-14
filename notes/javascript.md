@@ -66,7 +66,7 @@ You should be able to see something like screenshot below:
 Please modify the script content to be like below to see how to use Browser
 API to change HTML content:
 
-```js
+```javascript
 document.querySelector('p')
 	.textContent = 'Hello JavaScript from CS-3220';
 ```
@@ -91,7 +91,7 @@ After that, we change the [textContent](https://developer.mozilla.org/en-US/docs
 JavaScript is a *dynamic type language*; thus, to declare a variable, you don't
 have to declare the type of it and simply put "var" for declaring a variable.
 
-```js
+```javascript
 // in JavaScript empty value of a variable is "undefined"
 var newVariable;
 ```
@@ -101,7 +101,7 @@ end of every statement!
 
 Now lets put some value in the variable!
 
-```js
+```javascript
 // to assign variable, it is the same statement as Java using "="
 newVariable = 'Hello CS3220';
 
@@ -124,7 +124,7 @@ JavaScript:
 * Array
 * Object
 
-```js
+```javascript
 var stringVariable = 'This is a string';
 var numberVariable = 123;
 var booleanVariable = true;
@@ -142,14 +142,14 @@ var h1 = document.querySelector('h1'); // is also an object
 
 * Add/concatenation
 
-```js
+```javascript
 6 + 4;
 'A string' + 'another string';
 ```
 
 * subtract, multiply, divide
 
-```js
+```javascript
 3 - 2;
 2 * 3;
 4 / 2;
@@ -157,13 +157,13 @@ var h1 = document.querySelector('h1'); // is also an object
 
 * Identity operator
 
-```js
+```javascript
 1 === 1;
 ```
 
 * Negative, not equals
 
-```js
+```javascript
 var t = true;
 f = !t;
 
@@ -172,7 +172,7 @@ f !== t; // true
 
 ### Conditions
 
-```js
+```javascript
 if (1 === 2) {
 	console.log('What!?!?!?!?');
 } else {
@@ -184,7 +184,7 @@ You will notice in JavaScript, you are using "===" than "==" like other language
 You can also do "==" in JavaScript but it's not recommended for most of time.
 "==" is the loose comparison. In example, the following will return true:
 
-```js
+```javascript
 1 == '1';
 true == 'true';
 null == undefined;
@@ -198,7 +198,7 @@ more recommended to do "===" than "==".
 
 In JavaScript, you can use the following to loop through items:
 
-```js
+```javascript
 var list = [1, 2, 3];
 
 for (var i = 0; i < list.length; i ++) {
@@ -215,7 +215,7 @@ list.forEach(function(item) {
 
 To declare a function in JavaScript, you simply use `function` keyword:
 
-```js
+```javascript
 // to delcare a function
 function aFunction () {
 	console.log('Calling a function');
@@ -243,7 +243,7 @@ multiply(2, 3); // return 6
 It's common to do operations on array. In JavaScript, there are some built-in
 array functions you may find familiar coming from functional programming background:
 
-```js
+```javascript
 var list = [1, 2, 3];
 
 // classic forEach, map, reduce, & filter functions
@@ -285,7 +285,7 @@ The most obvious one is "click" event like below:
 <button id="click_me">button</button>
 ```
 
-```js
+```javascript
 document.querySelector('#click_me').onclick = function () {
 	alert('Hello there');
 };
@@ -293,6 +293,8 @@ document.querySelector('#click_me').addEventListener('click', function() {
 	alert('Hello there again');
 });
 ```
+
+Reference: https://developer.mozilla.org/en-US/docs/Web/Events
 
 **Practice**
 
@@ -322,7 +324,7 @@ on click.
 </style>
 ```
 
-```js
+```javascript
 var dom = document.querySelector('.rgb-square');
 
 dom.addEventListener('click', function () {
@@ -342,7 +344,7 @@ between 1 and 10; and I will tell you if it is my number or not!</p>
 <button id="guess">Guess a number</button>
 ```
 
-```js
+```javascript
 var node = document.querySelector('#guess').addEventListener('click', function() {
 	var number = prompt('Guess a number!');
 });
@@ -365,8 +367,7 @@ includes:
 
 Arrow functions are essentially the same as the Java lambda function like below:
 
-
-```js
+```javascript
 function a () {
     console.log('a');
 }
@@ -394,7 +395,7 @@ thinking into JavaScript. Pre-ES6, you will need to do prototype inheritance.
 Now with the classes declaration, you can define object and inherit pretty well!
 
 
-```js
+```javascript
 class Shape {
     get area() {
         console.log('Define me!');
@@ -423,7 +424,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 Template string is like Java String.format method allowing you to define String
 with variables inside.
 
-```js
+```javascript
 var test = 'Hello';
 var tplString = `${test} World!`;
 ```
@@ -432,7 +433,7 @@ var tplString = `${test} World!`;
 
 Default allows function argument to have default value if it is not assigned.
 
-```js
+```javascript
 function defaultValueFn (a = 'hello', b = 'world') {
     console.log(a, b);
 }
@@ -442,7 +443,7 @@ defaultValueFn('Hey');
 
 Rest allows function to declare argument as list
 
-```js
+```javascript
 function restValueFn (a, ...b) {
     console.log(a, b.length);
 }
@@ -452,7 +453,7 @@ restValueFn('test', 'hello', '1', '2');
 
 Spread allow argument to accept array as many arguments to function.
 
-```js
+```javascript
 function spreadFn (a, b, c) {
     console.log(a, b, c);
 }
@@ -466,7 +467,7 @@ Let is a scoped variable and will never be exposed outside of function scope.
 Const is like a `final` keyword in Java -- declare a variable that cannot be
 reassigned.
 
-```js
+```javascript
 function blockFn () {
     let a = 3;
     const b = 'cannot be reassigned';
@@ -480,15 +481,14 @@ function blockFn () {
 Module allows JS developer to define reusable module so other JS external files
 can import and reuse.
 
-```js
+```javascript
 // math.js
 export function multiply (a, b) {
     return a * b;
 }
 ```
 
-
-```js
+```javascript
 import {multiply} from 'math';
 console.log(multiply(2, 3));
 ```
@@ -538,10 +538,13 @@ of the most common operations with JavaScript in browser:
 Using `querySelector` and `querySelectorAll`, JavaScript developers are able to
 find the exact DOM node(s) from document. In example:
 
-```js
-const specialNode = document.querySelector('#special'); // find an element with id of "special"
-const buttonWithBtnClass = document.querySelectorAll('.btn'); // find all elements with class of "btn"
-const buttons = document.querySelectorAll('button'); // find all elements with tag of "button"
+```javascript
+// find an element with id of "special"
+const specialNode = document.querySelector('#special');
+// find all elements with class of "btn"
+const buttonWithBtnClass = document.querySelectorAll('.btn');
+// find all elements with tag of "button"
+const buttons = document.querySelectorAll('button');
 ```
 
 > You will notice the query selector syntax is extremely close to the CSS selector.
@@ -552,7 +555,7 @@ Please be familiar with CSS selector before using querySelector
 Adding event listener is probably by far the most common operation in JavaScript.
 For example, if you want to react to a button click you can go with following:
 
-```js
+```javascript
 const btn = document.querySelector('#some_button');
 btn.addEventListener('click', () => {
     alert('This event is responding to your button click');
@@ -564,12 +567,12 @@ btn.addEventListener('click', () => {
 Coming after reacting to adding event listener, toggling classes is second most
 common operation.
 
-```js
+```javascript
 function toggleBtnClass () {
     const btn = document.querySelector('#btn')
     btn.addEventListener('click', () => {
-            btn.classList.toggle('--state-success');
-        });
+        btn.classList.toggle('--state-success');
+    });
 }
 ```
 
@@ -578,15 +581,16 @@ validation rules).
 
 ## Component Pattern
 
-So far we have learn enough about JavaScript as a language, lets learn something
-about component pattern!
+Component based architecture is damn common in many modern JavaScript frameworks
+nowadays. This is true for Angular(JS), React, Vue, Ember and so on.
 
-Component based architecture is very common in many modern JavaScript frameworks
-nowadays. This is true for AngularJS, React, Vue, Ember and so on. In this 
-lesson, we will not be using any of the framework to create component however.
+In this lesson, we will not be using any of the frameworks to create component however.
 
 To focus our learning on JavaScript, we will be creating our own component
-pattern that (hopefully) can represent the real component as concept to students.
+in lower level fundamental as concept to students. In specific, we choose to use
+[WebComponent](https://developers.google.com/web/fundamentals/web-components) to
+implement while the popular framework like Angular or React may have slightly
+different specification.
 
 ### What is a component?
 
@@ -596,16 +600,16 @@ like below:
 > An individual software component is a software package, a web service, a 
 web resource, or a module that encapsulates a set of related functions (or data).
 
-In the UI world, instead of looking at the individual control (like button,
+In the User Interface (UI) world, instead of looking at the individual control (like button,
 input tag). We combine the related functionalities together to form an UI
 component.
 
 Furthermore, an UI component is a small, potentially re-usable set of logic,
-interface, behavior elements.
+interface and behavior elements.
 
 ### Example component
 
-```js
+```javascript
 class RGBSqaure {
     /**
      * Pass the dom element into the JavaScript class to attach event & data
@@ -660,7 +664,7 @@ to follow some sort of pattern so our code becomes easier to maintain and refact
 To render an HTML string from JavaScript, you can simply use the `innerHTML`
 attribute in the DOM. In example:
 
-```js
+```javascript
 class RandomList {
     constructor(root) {
         this.root = root;
@@ -697,25 +701,6 @@ class RandomList {
     }
 }
 ```
-
-### Passing data from HTML to JavaScript
-
-There is also built-in HTML5 method to pass data from HTML value to JavaScript
-by `data-*` attribute. In example:
-
-```html
-<button id="special_button" data-name="Eric was here">Click me</button>
-```
-
-```js
-var btn = document.querySelector('#special_button')
-btn.addEventListener('click', () => {
-    // with "dataset", you can easily access the "data-*" attribute value
-    alert(btn.dataset.name);
-});
-```
-
-https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
 
 ## Resources
 
