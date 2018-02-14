@@ -6,23 +6,25 @@
 
 * [JavaScript Intro](#javascript-intro)
 * [JavaScript syntax](#javascript-syntax)
-* [Callback](#callback)
-* [Browser storage](#browser-storage)
 * [EcmaScript 6 features](#es6-features)
-* [You may not need jQuery](#you-may-not-need-jquery)
 * [Common JavaScript Usage](#common-javascript-usage)
     * Query for DOM element
 	* Add event listener
 	* Class toggle
 * [Component pattern](#component-pattern)
-    * Passing data from HTML to JavaScript
+
+* [Callback](#callback)
+* [Browser storage](#browser-storage)
+* [You may not need jQuery](#you-may-not-need-jquery)
 
 ### Lab
 
-* Link -- [lab2.md](labs/lab2.md)
-* Behavior of restaurant application (public facing)
-	* Shopping cart
-	* Table sorting
+* Button to counter
+* Generator to inventory
+
+### Homework
+
+* Background game loop
 
 ## JavaScript Intro
 
@@ -43,21 +45,25 @@ nor libraries but learning plain JavaScript.
 In other word, we will start by learning JavaScript syntax, data structure &
 common pattern like callback. After learning the basic, we will have a short
 exercise to test your JavaScript knowledge before we move onto the EcmaScript 6
-features (e.g. arrow function, Promise ... etc.).
+features (e.g. arrow function, Promise … etc.).
 
 ### Hello world
 
 JavaScript as one of the most common yet powerful language is probably easier
-to learn by doing than all the theories around it. To run the hello world example,
-Please open the [hello-world.html](../front/js/hello-world.html) to see how
-to load external JavaScript and open Chrome debugger console to see the console
-output.
+to learn by doing than all the theories around it. To run the hello world example:
+
+```html
+<p>Please check your console!</p>
+<script>
+    console.log('Hello world!');
+</script>
+```
 
 You should be able to see something like screenshot below:
 
 ![JavaScript hello world example](imgs/js-intro-screenshot.png)
 
-Please modify the `hello.js` content to be like below to see how to use Browser
+Please modify the script content to be like below to see how to use Browser
 API to change HTML content:
 
 ```js
@@ -73,7 +79,7 @@ So what happened?
 We change the HTML content by first using [querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) API to find out
 the right HTML node.
 
-> You should notice the querySelector API selector is very similar to CSS
+> You should notice the querySelector API selector is similar to CSS
 selector we learned from last class.
 
 After that, we change the [textContent](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent) of the HTML node.
@@ -342,128 +348,6 @@ var node = document.querySelector('#guess').addEventListener('click', function()
 });
 ```
 
-## Callback
-
-So far most of the syntax should appear to be similar if you came from the Java
-programming background. These includes assignments, string type and among other
-various programming aspects.
-
-However, the biggest difference between programming in Java and JavaScript is
-the asynchronous aspect. In JavaScript, specifically in browser, the JS code is
-executed in a **single thread**. Thus, it's important to keep the blocking 
-functions running asynchronous.
-
-For example the following code won't always work from function a, b & c order.
-
-```js
-function random () {
-	return Math.random() *  10;
-}
-function a () {
-	setTimeout(function() {
-		console.log('a');
-	}, random());
-}
-function b () {
-	setTimeout(function() {
-		console.log('b');
-	}, random());
-}
-function c () {
-	setTimeout(function() {
-		console.log('c');
-	}, random());
-}
-
-// a, b, c can happen in any order
-a();
-b();
-c();
-```
-
-Above example uses random to simulate an blocking task can take any amount of 
-time to finish its task. Due to this async aspect, you cannot guarantee some
-function execution orders. Thus, it's important to know the **callback** pattern.
-
-Callback pattern is simply passing a function from one function to another so that
-the function knows to call second function when everything is done. In example:
-
-
-```js
-function random () {
-	return Math.random() *  10;
-}
-function a (callback) {
-	setTimeout(function() {
-		console.log('a');
-		callback();
-	}, random());
-}
-function b (callback) {
-	setTimeout(function() {
-		console.log('b');
-		callback();
-	}, random());
-}
-function c (callback) {
-	setTimeout(function() {
-		console.log('c');
-		callback();
-	}, random());
-}
-
-// a, b, c can happen in any order
-a(function() {
-	b(function() {
-		c(function() {
-			console.log('Everything is ready');
-		});
-	});
-});
-```
-
-Notice that in all functions (a, b & c), they all accept an argument (which is
-assumed to be a function) so that the function can call the *callback* function
-when the blocking is done.
-
-What would happen if you keep all function synchronous instead of running some
-blocking asynchronous? One, and the most important one, is user browser will
-stop and prevent end user from doing anything. Do you have example like going
-to a site that appears to be super slow on button click. Your browser even is
-not responding to your mouse click when that happens. And yes, browser rendering
-engine and your JavaScript runtime are sharing the same thread. Thus, when your
-application logic is blocking the rendering engine from doing anything. You
-are blocking user!
-
-## Browser storage
-
-You can store certain amount of items using browser built-in storage. Find detail:
-https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
-
-Browser storage like sessionStorage and localStorage is extremely simple key-value
-store. They store item using key and value. They are not as complex as relational
-database or noSQL database.
-
-The difference between sessionStorage and localStorage is session storage only
-exists through out the session. In other word, once user close the browser tab,
-they lose all the data. Where as the localStorage, you can store items in the
-item and user can close the browser tab and come back with the same data in
-the store.
-
-Example can be found below:
-
-```js
-// to store an item under sessionStorage
-window.sessionStorage.setItem('key', 'value');
-
-// to retrieve an item from sessionStorage
-window.sessionStorage.getItem('key'); // should return 'value'
-
-// where localStorage is simply replace as localStorage
-window.localStorage.setItem('key', 'value');
-window.localStorage.getItem('key'); // should return 'value'
-```
-
 ## ES6 features
 
 Modern JavaScript programming actually contain a lot of syntactic sugar, these
@@ -607,34 +491,6 @@ export function multiply (a, b) {
 ```js
 import {multiply} from 'math';
 console.log(multiply(2, 3));
-```
-
-### Promise
-
-![Callback hell gif](http://icompile.eladkarako.com/wp-content/uploads/2016/01/icompile.eladkarako.com_callback_hell.gif)
-
-I'm sure for many JavaScript developer in the past, you will face the callback
-hell at some points in your life. Your indentation just keep going!
-
-Promise is invented to solve the above problem so that your code doesn't need to
-be indented like "hadouken" pattern.
-
-```js
-function random () {
-    return Math.random() *  10;
-}
-function blockingFn (value) {
-    return new Promise((resolve, reject) => {
-        setTimeout(function() {
-            console.log('done', value);
-            resolve(value +1);
-        }, random());
-    });
-}
-
-blockingFn(1)
-    .then(blockingFn)
-    .then(blockingFn);
 ```
 
 ### Summary

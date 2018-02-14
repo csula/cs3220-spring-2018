@@ -24,7 +24,7 @@ to implement the core of the game – click on the button to increment counter.
 You can start your code from downloading the source code from this repository
 under branch `lab2`:
 
-https://github.com/rcliao/cookie-clicker
+https://github.com/rcliao/cookie-clicker/tree/lab2
 
 ## Requirements
 

@@ -15,11 +15,9 @@
 	* Add event listener
 	* Class toggle
 * Component pattern
-    * Passing data from HTML to JavaScript
 
 
 * Async Programming
-* Browser storage
 * You may not need jQuery
 
 
