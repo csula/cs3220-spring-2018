@@ -12,6 +12,7 @@
 	* Add event listener
 	* Class toggle
 * [Component pattern](#component-pattern)
+* [State management](#statement-management)
 
 * [Callback](#callback)
 * [Browser storage](#browser-storage)
@@ -657,6 +658,11 @@ class RGBSqaure {
 
 #### WebComponent
 
+```html
+<!-- import webcomponent polyfill for other browsers -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.1.0/webcomponents-lite.js"></script>
+```
+
 ```javascript
 class RGBSquare extends window.HTMLElement {
     constructor () {
@@ -692,6 +698,8 @@ class RGBSquare extends window.HTMLElement {
         return this.colors[i];
     }
 }
+
+window.customElements.define('rgb-square', RGBSqaure);
 ```
 
 Before we move onto detail, you might be thinking why go such long route for 
@@ -702,11 +710,27 @@ In specific:
 
 ```javascript
 const squrares = document.querySelectorAll('.rbq-square');
+// forEach on NodeList type may not work in IE!
 squares.forEach(square => {
     square.colors = ['r', 'g', 'b'];
+    square.index = -1;
     square.addEventListener('click', () => {
+        const oldClass = square.colors[square.index];
+        const newClass = square.colors[++square.index];
+        if (oldClass) {
+            square.classList.remove(oldClass);
+        }
+        square.classList.add(newClass);
     });
 });
+
+// helper function
+function colorClass (colors, i) {
+    if (i < 0) {
+        return '';
+    }
+    return colors[i];
+}
 ```
 
 The problem of that approach is – it tends to create spaghetti code. And it's
@@ -758,6 +782,117 @@ class RandomList {
         return Math.floor(Math.random() * 100);
     }
 }
+```
+
+## State management
+
+State management is quite a big problem in the front end application as soon as
+you have multiple components sharing the same set of data.
+
+For example, you may have the button element that increment a counter while the
+other component may this counter value and/or modify it for its purpose. As
+software engineer, we want to keep this data in a single place so we can sanely
+assume the data state when reading from it. In other word, the worst that you
+can do is duplicate the state accidentally.
+
+There were some past tries to tackle the state management problems in the past.
+The popular ones nowadays are [Redux](https://redux.js.org/), [MobX](https://github.com/mobxjs/mobx).
+In this section, we focus on the Redux pattern while trying not to use Redux into
+our application.
+
+![Redux architecture]()
+
+We will modify the state of the color square earlier to use Redux as central store.
+
+```javascript
+// Store is heavily inspired by Redux from React pattern to handle state management
+class Store {
+    /**
+     * Create a new store with specific reducer and optionally initial state
+     * @constructor
+     * @param {function} reducer - the reducer to mutate state
+     * @param {initialState} object - the initial state
+     */
+    constructor (reducer, initialState = {}) {
+        this.reducer = reducer;
+        // listeners are internal state to keep track of which reducers to call in this
+        // order
+        this.listeners = [];
+        // initial internal state
+        this.__state = initialState;
+    }
+
+    /**
+     * Overwrites getter for `state` variable to be READ-ONLY state through
+     * deepCopy method
+     */
+    get state () {
+        return deepCopy(this.__state);
+    }
+
+    /**
+     * `dispatch` controls state changes. One should use only dispatch to show
+     * intent to change state and go through reducer to change so
+     * @param {object} action - action should contain both `type` and `payload`
+     */
+    dispatch (action) {
+        this.__state = this.reducer(this.state, action);
+        this.listeners.forEach(l => l(this.state, action));
+    }
+
+    /**
+     * subscribe allows consumer to listen for state changes
+     * @param {function} listener - function contains state and action as its arguments
+     */
+    subscribe (listener) {
+        this.listeners.push(listener);
+    }
+
+    /**
+     * unsubscribe allows consumer to stop listening to state changes
+     * @param {function} listener - the function consumer subscribed earlier
+     */
+    unsubscribe (listener) {
+        this.listeners = this.listeners.filter(l => l != listener);
+    }
+}
+
+/**
+ * deepCopy is helper method to create deep copy of certain object
+ * @param {object} obj - the object to copy from
+ */
+function deepCopy(obj) {
+    return JSON.parse(JSON.stringify(obj));
+}
+```
+
+You can use above store along as below:
+
+```javascript
+// reducer is single action to change data state
+const reducer = (state, action) => {
+    switch (action.type) {
+    case 'TEST':
+        state.data = action.payload;
+        return state;
+    default:
+        return state;
+    }
+};
+
+// create new store object
+const store = Store(reducer, {});
+
+// one can subscribe to store state changes
+store.subscribe(state => {
+    console.log(state);
+});
+
+// dispatch shows intent to change data (toward certain reducer logic above)
+store.dispatch({
+    type: 'TEST',
+    payload: 'Hello world'
+});
 ```
 
 ## Resources
