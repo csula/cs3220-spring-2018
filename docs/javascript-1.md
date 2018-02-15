@@ -10,21 +10,16 @@
 * JavaScript Intro
 * JavaScript syntax
 * EcmaScript 6 features
+* You may not need jQuery
 * Common JavaScript Usage
     * Query for DOM element
-	* Add event listener
-	* Class toggle
-* Component pattern
-
-
-* Async Programming
-* You may not need jQuery
+    * Add event listener
+    * Class toggle
 
 
 ### Lab
 
 * Button to counter
-* Generator to inventory
 
 
 ### Homework
@@ -34,6 +29,9 @@
 
 
 ## JavaScript Intro
+
+
+https://www.destroyallsoftware.com/talks/wat
 
 
 * _Browser_
@@ -54,6 +52,16 @@ console.log('Hello world');
 ```
 
 
+```html
+<p>Hello from HTML</p>
+```
+
+```javascript
+document.querySelector('p').textContent =
+'Hello from JavaScript';
+```
+
+
 
 ## JavaScript Syntax
 
@@ -67,16 +75,19 @@ var newVariable;
 
 
 ```javascript
-// to assign variable, it is the same statement as Java using "="
+// to assign variable, it is the same statement
+// as Java using "="
 newVariable = 'Hello CS3220';
 
-// you can also combine declaration with assignment together if you want!
+// you can also combine declaration with 
+// assignment together
 var newVariable2 = 'Hello CS-3220';
 
 // and then to retrieve variable simply call variable
 newVariable;
 
-// After you declare and assign variable, you can always assign the variable again
+// After you declare and assign variable, you can always 
+// assign the variable again
 newVariable = 'Hello cs-3220 again';
 ```
 
@@ -204,8 +215,68 @@ multiply(2, 3); // return 6
 ```
 
 
+#### Closure
+
+Closure allows JavaScript function to use variable from its parent scope.
+
+
+```javascript
+function init () {
+    var name = 'Mozilla';
+    function displayName () {
+        console.lot(name);
+    }
+    displayName();
+}
+
+init();
+```
+
+
+```javascript
+function makeFunc () {
+    var name = 'Mozilla';
+    function displayName () {
+        console.log(name);
+    }
+    return displayName;
+}
+
+var myFunc = makeFunc();
+myFunc();
+```
+
+
+Common Mistake
+
+```html
+<ul>
+    <li id="item_1">Item 1</li>
+    <li id="item_2">Item 2</li>
+    <li id="item_3">Item 3</li>
+</ul>
+```
+
+
+```javascript
+function logClick () {
+    var logs = [ 'hello 1', 'hello 2', 'hello 3' ];
+    for (var i = 0; i < logs.length; i ++) {
+        var log = logs[i];
+        document.getElementById('item_' + i).onclick = function () {
+            console.log(log);
+        };
+    }
+}
+
+logClick();
+```
+
 
 ### Array functions
+
+Most data comes in not in single but in list.
+
 
 ```javascript
 var list = [1, 2, 3];
@@ -254,12 +325,14 @@ list.filter(function(item) {
 ```
 
 ```javascript
-document.querySelector('#click_me').onclick = function () {
-	alert('Hello there');
-};
-document.querySelector('#click_me').addEventListener('click', function() {
-	alert('Hello there again');
-});
+document.querySelector('#click_me')
+    .onclick = function () {
+        alert('Hello there');
+    };
+document.querySelector('#click_me')
+    .addEventListener('click', function() {
+        alert('Hello there again');
+    });
 ```
 
 
@@ -268,7 +341,9 @@ document.querySelector('#click_me').addEventListener('click', function() {
 
 ```html
 <span class="rgb-square"></span>
+```
 
+```css
 <style>
 	.rgb-square {
 		display: block;
@@ -288,6 +363,7 @@ document.querySelector('#click_me').addEventListener('click', function() {
 	}
 </style>
 ```
+
 
 ```javascript
 var dom = document.querySelector('.rgb-square');
@@ -486,99 +562,6 @@ function toggleBtnClass () {
     btn.addEventListener('click', () => {
         btn.classList.toggle('--state-success');
     });
-}
-```
-
-
-
-## Component Pattern
-
-
-### What is a component?
-
-
-### Example component
-
-```javascript
-class RGBSqaure {
-    /**
-     * Pass the dom element into the JavaScript class to attach event & data
-     */
-    constructor(root) {
-        this.root = root;
-        this.colors = ['r', 'g', 'b'];
-        this.colorIndex = -1; // no color
-        this.onClick = () => this._updateColor();
-        this.init();
-    }
-
-    // define its life cycle with init
-    init () {
-        this.root.addEventListener('click', this.onClick);
-    }
-
-    // on destroy, it should remove all the event listeners so it doesn't create
-    // memory leak
-    destroy () {
-        this.root.removeEventListener('click', this.onClick);
-    }
-
-    _updateColor () {
-        let oldClass = this.colorClass(this.colorIndex);
-        let newClass = this.colorClass(++this.colorIndex);
-        if (oldClass) {
-            this.root.classList.remove(oldClass);
-        }
-        this.root.classList.add(newClass);
-    }
-
-    colorClass (i) {
-        if (i < 0) {
-            return '';
-        }
-        return this.colors[i];
-    }
-}
-```
-
-
-### What if JavaScript need to do render?
-
-```javascript
-class RandomList {
-    constructor(root) {
-        this.root = root;
-        this.list = [];
-        this.fillRandomValues();
-        this.init();
-    }
-
-    init () {
-        // using innerHTML with template string, you achieve a simple template
-        // rendering
-        this.root.innerHTML = `<ul>
-            ${this.getListItems()}
-        </ul>`
-    }
-
-    getListItems () {
-        return this.list.map(item => {
-            return `<li>${item}</li>`;
-        }).reduce((a, b) => {
-            return a + b;
-        }, '');
-    }
-
-    fillRandomValues () {
-        let size = this.randomNum();
-        for (var i = 0; i < size; i ++) {
-            this.list.push(this.randomNum());
-        }
-    }
-
-    randomNum () {
-        return Math.floor(Math.random() * 100);
-    }
 }
 ```
 
