@@ -239,6 +239,67 @@ function multiply (a, b) {
 multiply(2, 3); // return 6
 ```
 
+#### Closure
+
+> A closure is the combination of a function and the lexical environment within which that function was declared.
+
+Closure allows JavaScript code within function to read a level up to its parent.
+
+In example:
+
+```javascript
+function init () {
+    var name = 'Mozilla';
+    function displayName () {
+        console.lot(name);
+    }
+    displayName();
+}
+
+init();
+```
+
+```javascript
+function makeFunc () {
+    var name = 'Mozilla';
+    function displayName () {
+        console.log(name);
+    }
+    return displayName;
+}
+
+var myFunc = makeFunc();
+myFunc();
+```
+
+Common Mistake:
+
+```html
+<ul>
+    <li id="item_1">Item 1</li>
+    <li id="item_2">Item 2</li>
+    <li id="item_3">Item 3</li>
+</ul>
+```
+
+```javascript
+function logClick () {
+    var logs = [
+        'hello 1',
+        'hello 2',
+        'hello 3'
+    ];
+    for (var i = 0; i < logs.length; i ++) {
+        var log = logs[i];
+        document.getElementById('item_' + i).onclick = function () {
+            console.log(log);
+        };
+    }
+}
+
+logClick();
+```
+
 ### Array functions
 
 It's common to do operations on array. In JavaScript, there are some built-in
@@ -893,6 +954,65 @@ store.dispatch({
     type: 'TEST',
     payload: 'Hello world'
 });
+```
+
+How do we use store with WebComponent above?
+
+```javascript
+// reducer is single action to change data state
+const reducer = (state, action) => {
+    switch (action.type) {
+    case 'TEST':
+        state.data = action.payload;
+        return state;
+    default:
+        return state;
+    }
+};
+
+// create new store object
+const store = Store(reducer, {});
+
+ExampleComponentWithCI(store);
+
+// dependency injection to send store to WebComponent through Closure
+// Dependency Injection pattern to inject store into the ExampleComponent
+function ExampleComponentWithCI (store) {
+	return class ExampleComponent extends window.HTMLElement {
+		constructor () {
+			super();
+			this.store = store;
+			console.log('ExampleComponent#Got store', this.store);
+			// initial DOM rendering
+			this.textContent = this.store.state.example;
+
+			this.onStateChange = this.handleStateChange.bind(this);
+
+			// add click event
+			this.addEventListener('click', () => {
+				this.store.dispatch({
+					type: 'TEST',
+					payload: 'You clicked this element'
+				});
+			});
+		}
+
+		handleStateChange (newState) {
+			console.log('ExampleComponent#stateChange', this);
+			this.textContent = newState.data;
+		}
+
+		connectedCallback () {
+			console.log('ExampleComponent#onConnectedCallback');
+			this.store.subscribe(this.onStateChange);
+		}
+
+		disconnectedCallback () {
+			console.log('ExampleComponent#onDisconnectedCallback');
+			this.store.unsubscribe(this.onStateChange);
+		}
+	};
+}
 ```
 
 ## Resources
