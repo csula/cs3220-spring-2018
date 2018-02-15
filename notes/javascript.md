@@ -800,7 +800,7 @@ The popular ones nowadays are [Redux](https://redux.js.org/), [MobX](https://git
 In this section, we focus on the Redux pattern while trying not to use Redux into
 our application.
 
-![Redux architecture]()
+![Redux architecture](imgs/redux-architecture.png)
 
 We will modify the state of the color square earlier to use Redux as central store.
 
