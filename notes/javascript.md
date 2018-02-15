@@ -9,9 +9,10 @@
 * [EcmaScript 6 features](#es6-features)
 * [Common JavaScript Usage](#common-javascript-usage)
     * Query for DOM element
-	* Add event listener
-	* Class toggle
+    * Add event listener
+    * Class toggle
 
+---
 
 * [Component pattern](#component-pattern)
 * [State management](#statement-management)
@@ -20,8 +21,10 @@
 
 ### Lab
 
-* Button to counter
-* Generator to inventory
+* Lab 2
+    * Button to counter
+* Lab 3
+    * Generator to inventory
 
 ### Homework
 
