@@ -11,11 +11,11 @@
     * Query for DOM element
 	* Add event listener
 	* Class toggle
+
+
 * [Component pattern](#component-pattern)
 * [State management](#statement-management)
-
-* [Callback](#callback)
-* [Browser storage](#browser-storage)
+* [Async Programming](#async-programming)
 * [You may not need jQuery](#you-may-not-need-jquery)
 
 ### Lab
