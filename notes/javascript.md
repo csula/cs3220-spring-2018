@@ -7,6 +7,7 @@
 * [JavaScript Intro](#javascript-intro)
 * [JavaScript syntax](#javascript-syntax)
 * [EcmaScript 6 features](#es6-features)
+* [You may not need jQuery](#you-may-not-need-jquery)
 * [Common JavaScript Usage](#common-javascript-usage)
     * Query for DOM element
     * Add event listener
@@ -17,7 +18,6 @@
 * [Component pattern](#component-pattern)
 * [State management](#statement-management)
 * [Async Programming](#async-programming)
-* [You may not need jQuery](#you-may-not-need-jquery)
 
 ### Lab
 
