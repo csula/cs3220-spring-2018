@@ -2,42 +2,81 @@
 
 ## Deliverables
 
-* Button component [2 pts]
-* Counter component [2 pts]
-* Ability to increment counter from reducer [1pt]
+* app.js [4 pts]
+    * button on click [2 pts]
+    * counter display [2 pts]
+        * Need to use `PubSub` object below
+* index.html [1 pt]
+    * should be nearly the same as lab 1
 
 ## Description
 
-Using the component pattern learned in the lecture earlier, your job is
-to implement first half of the incremental game functionality in JavaScript.
+Implement the first behavior of the game – click on the button to increment
+counter.
 
-We want to be able to click on the button to increment counter. This requires us
-to architect the application structure to share data state across multiple
-components. To do so, we choose to follow [redux pattern][1] as our data store.
-To simplify the idea, we have simpler version of redux store under "store.js".
+You should create a brand new JavaScript file called `app.js` and import such
+file under the `index.html` from lab 1.
 
-Your task here is to continue the component pattern and data store pattern
-to implement the core of the game – click on the button to increment counter.
+From there, you have to implement the event binding to add click event to the
+button and increment the value accordingly.
 
-## Starter code
+As a starter, you will need a place to store the game state. Lets keep it simple
+and store the state under Window object (global sharable object across all scripts)
 
-You can start your code from downloading the source code from this repository
-under branch `lab2`:
+```html
+<script>
+    window.incrementalGame = {
+        state: {
+            counter: 0
+        }
+    };
+</script>
+```
 
-https://github.com/rcliao/cookie-clicker/tree/lab2
+In additional to above, you want to ensure your state mutation code goes into a
+single function so you can notify the changes to the view layer on update.
+
+As starter, you may want to consider using this code:
+
+```javascript
+// PubSub is single object for publish data to multiple subscribers
+class PubSub {
+    constructor () {
+        this.subscribers = [];
+    }
+
+    // subscribe allows a new subscriber to listen for changes by providing
+    // callback function in the parameter
+    subscribe (fn) {
+        this.subscribers.push(fn);
+    }
+
+    // one can publish any data to subscribers
+    publish (data) {
+        this.subscribes.forEach(subscriber => {
+            subscriber(data);
+        });
+    }
+}
+
+const pubSub = new PubSub();
+
+pubSub.subscriber(data => {
+    console.log(data);
+});
+
+pubSub.publish('Hello world!');
+```
 
 ## Requirements
 
 ### Functional
 
 * When user clicks on *the button*, the counter should increase
-* The *counter* should display up to date resource value
+* The *counter* should display up to date resource value from `window.incrementalGame.state.counter`
 
 ### Technical
 
-* Should re-use the same HTML & CSS from lab 1
-* Should use `client/src/store.js` to store all states (resource, generators & stories)
-* Should implement the code under `client/src/views/button.js` and `client/src/views/counter.js`
-* Should pass unit tests executed by `./scripts/front-test.sh`
-
-[1]: https://redux.js.org/
+* Should re-use the same (similar) HTML & CSS from lab 1
+* Should store all state under `window.incrementalGame.state`
+* Should use `PubSub` object provided in lab 2
