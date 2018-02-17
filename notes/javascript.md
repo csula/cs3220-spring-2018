@@ -643,6 +643,15 @@ function toggleBtnClass () {
 Then, the remaining JavaScript logics all lives with your business logic (e.g.
 validation rules).
 
+### DOM Event References
+
+* [document.querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
+* [document.querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
+* [element.innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+* [element.getAttribute()](https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute)
+* [element.setAttribute()](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute)
+* [element.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+
 ## Component Pattern
 
 Component based architecture is damn common in many modern JavaScript frameworks
