@@ -3,7 +3,11 @@
 ## Deliverables
 
 * src/models/generator.js [2 pts]
+    * `getCost` function [1 pt]
+    * `generate` function [1 pt]
 * src/views/generator.js [2 pts]
+    * DOM rendering [1 pt]
+    * Event binding to buy [1 pt]
 * src/reducers.js [1 pt]
 
 > Starting from this lab and onward, you will need to pass unit tests
@@ -24,7 +28,12 @@ To start with, you will need to download lab 3 release into your lab3 folder: ht
 ### Functional
 
 * User should be able to buy generator by clicking on the "buy" button in generator
+    * Resource should be deducted according to generator cost
+    * Generator quantity should be updated
 * Generator cost should increase based on its quantity
+
+Following does not need to be functional just yet:
+
 * Generator does *not* need to increment value on the background
     * This will be done at homework 1
 
