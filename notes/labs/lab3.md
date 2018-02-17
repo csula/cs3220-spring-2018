@@ -2,11 +2,38 @@
 
 ## Deliverables
 
-* Generator component  [3 pts]
-* Reducer implementation to add generator to state [2 pt]
+* src/models/generator.js [2 pts]
+* src/views/generator.js [2 pts]
+* src/reducers.js [1 pt]
+
+> Starting from this lab and onward, you will need to pass unit tests
+> executed by TravisCI. In other word, there should be a green check mark
+> showing under your Pull Request.
 
 ## Descriptions
 
+We are going to implement a couple components following [WebComponent][1]
+spec. Specifically, we will implement the Generator components using WebComponents.
+
+To start with, you will need to download lab 3 release into your lab3 folder: https://github.com/rcliao/cookie-clicker/releases
+
+> The releases are blank intentionally until the lab 3 publish date as Eric is working on adding tests … :bow:
+
 ## Requirements
 
-## Instructions
+### Functional
+
+* User should be able to buy generator by clicking on the "buy" button in generator
+* Generator cost should increase based on its quantity
+* Generator does *not* need to increment value on the background
+    * This will be done at homework 1
+
+### Technical
+
+* Generator view component should be implementing WebComponent spec
+* Generator quantity should be stored under `window.store` (in Redux)
+* Generator should read state from `store`
+* Generator should modify state through `reducer.js`
+
+[1]: https://developers.google.com/web/fundamentals/web-components/
+[2]: https://redux.js.org/

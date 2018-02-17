@@ -17,6 +17,7 @@
 
 * [Component pattern](#component-pattern)
 * [State management](#statement-management)
+* [JavaScript testing](#unit-test)
 * [Async Programming](#async-programming)
 
 ### Lab
