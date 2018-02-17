@@ -53,7 +53,7 @@ class PubSub {
 
     // one can publish any data to subscribers
     publish (data) {
-        this.subscribes.forEach(subscriber => {
+        this.subscribers.forEach(subscriber => {
             subscriber(data);
         });
     }
@@ -61,7 +61,7 @@ class PubSub {
 
 const pubSub = new PubSub();
 
-pubSub.subscriber(data => {
+pubSub.subscribe(data => {
     console.log(data);
 });
 
