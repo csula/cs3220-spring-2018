@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="app.css">
+<div id="app"></div>
+
+<script>
+class Shape {
+    get area() {
+        console.log('Define me!');
+    }
+}
+
+class Square extends Shape {
+    constructor(length) {
+        super();
+        this.length = length;
+        this.name = '';
+    }
+
+    get area() {
+        return this.length * this.length;
+    }
+
+    set name(arg) {
+        console.log('calling set name', arg);
+    }
+
+    print() {
+        console.log('I\'m a square having length ' + this.length);
+    }
+}
+
+var sq1 = new Square(5);
+sq1.area;
+sq1.name = 'test';
+sq1.print()
+
+
+const squareHTML = `
+    <h1>This is a square</h1>
+`;
+console.log(squareHTML);
+
+document.getElementById('app')
+    .innerHTML = squareHTML;
+</script>

@@ -1,0 +1,87 @@
+<style>
+    .rgb-square {
+        display: block;
+        background-color: #fff;
+        width: 2em;
+        height: 2em;
+    }
+
+    .rgb-square.--red {
+        background-color: red;
+    }
+    .rgb-square.--blue {
+        background-color: blue;
+    }
+    .rgb-square.--green {
+        background-color: green;
+    }
+</style>
+
+<span class="rgb-square"></span>
+<button>Change color</button>
+
+<script>
+    // PubSub is single object for publish data to multiple subscribers
+    class PubSub {
+        constructor () {
+            this.subscribers = [];
+        }
+
+        // subscribe allows a new subscriber to listen for changes by providing
+        // callback function in the parameter
+        subscribe (fn) {
+            this.subscribers.push(fn);
+        }
+
+        // one can publish any data to subscribers
+        publish (data) {
+            this.subscribers.forEach(subscriber => {
+                subscriber(data);
+            });
+        }
+    }
+
+// ======================================================
+    const pubSub = new PubSub();
+    window.state = {
+        index: -1
+    };
+    const colors = ['--red', '--blue', '--green'];
+    var index = -1; // nothing to begin with
+
+    const dom = document.querySelector('.rgb-square');
+    const btn = document.querySelector('button');
+    btn.addEventListener('click', () => {
+        pubSub.publish(window.state.index);
+    });
+
+    pubSub.subscribe(action => {
+        if (action.type !== 'CHANGE_COLOR') {
+            return;
+        }
+        const oldColor = getColor(colors, index);
+        if (oldColor) {
+            dom.classList.remove(oldColor);
+        }
+        index ++;
+        index = index % colors.length;
+        window.state.index = index;
+        const newColor = getColor(colors, index);
+        dom.classList.add(newColor);
+    });
+
+    dom.addEventListener('click', function() {
+        pubSub.publish({
+            type: 'CHANGE_COLOR',
+            payload: window.state.index
+        });
+    });
+
+    function getColor (colors, index) {
+        if (index < 0) {
+            return '';
+        }
+        return colors[index];
+    }
+</script>
+
