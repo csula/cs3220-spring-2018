@@ -16,9 +16,9 @@
 ---
 
 * [Component pattern](#component-pattern)
-* [State management](#statement-management)
-* [JavaScript testing](#unit-test)
-* [Async Programming](#async-programming)
+* [State management](#state-management)
+* [JavaScript testing](#javascript-testing)
+* [JavaScript bundler](#javascript-bundler)
 
 ### Lab
 
@@ -1078,6 +1078,69 @@ function continueChangeColor () {
 
 continueChangeColor();
 ```
+
+## Prefix to optional topics
+
+Starting from the following topics, I will go over them in a brief manner since
+these are the tools that is provided in lab 3 and homework 1.
+
+Students are not expected to understand the topic and use it as their own. Instead,
+students are expected to understand how to use them when the tools are provided
+in their favor of verifying code correctness.
+
+## Prerequisites of JavaScript tools
+
+Before we move into the tooling section, students will need to install 
+[Node.js](https://nodejs.org/en/). Please go ahead and download Node.js from
+the official website.
+
+To verify installation, you can run like below with `node -v` and `npm -v`:
+
+```
+~
+[I] ➜ node -v
+v9.3.0
+
+~
+[I] ➜ npm -v
+5.6.0
+```
+
+Once you have Node.js installed, we are ready for the tooling section.
+
+## JavaScript Testing
+
+JavaScript testing is possibly done with many different runners like Mocha, Jest, Chai … etc.
+In this semester, we pick Jest as test runner.
+
+In nutshell, Jest test code looks like below:
+
+```javascript
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+```
+
+It has `test` function to define test spec and use `expect` to compare output.
+
+To run the test, the starter project is set up with `npm test` for running tests.
+
+## JavaScript Bundler
+
+As discussed earlier last week, the JavaScript module is not yet ready for browser
+to use. Therefore, we need to define a "bundler" and "pre-processor" to generate
+ES5 ready code for our browser usage while we are using all the new syntaxes like
+ES6 modules.
+
+Students don't need to worry too much about how bundlers and pre-processors
+are defined. Instead, they should know that the source code may not be in the
+same location of the destination location.
+
+In the actual index.html, they should import the post-processed JavaScript code.
+
+In the starter code, the `src` folder is processed to be under `dest` folder.
+That is, if you want to import the JavaScript file, you can import from the
+`dest/app.bundle.js`
 
 ## Resources
 
