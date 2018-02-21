@@ -728,6 +728,10 @@ class RGBSqaure {
         return this.colors[i];
     }
 }
+
+// to use it
+const dom = document.querySelector('.rgb-square');
+new RGBSquare(dom);
 ```
 
 #### WebComponent
@@ -738,7 +742,9 @@ class RGBSqaure {
 ```
 
 ```javascript
+// extends from HTMLElement is the key here
 class RGBSquare extends window.HTMLElement {
+    // in constructor, define the instance variables
     constructor () {
         // this is the "DOM" of what is created, e.g. <rgb-square>
         this.colors = ['r', 'g', 'b'];
@@ -747,15 +753,17 @@ class RGBSquare extends window.HTMLElement {
         this.onClickEvent = () => this._updateColor();
     }
 
+    // connectedCallback is called when the DOM is rendered
     connectedCallback () {
-        this.root.addEventListener('click', this.onClick);
+        this.addEventListener('click', this.onClick);
     }
 
+    // disconnectedCallback is called when the DOM is removed from the page
     disconnectedCallback () {
-        this.root.removeEventListener('click', this.onClick);
+        this.removeEventListener('click', this.onClick);
     }
 
-    // Same methods as above
+    // Same helper methods as above
     _updateColor () {
         const oldClass = this.colorClass(this.colorIndex);
         const newClass = this.colorClass(++this.colorIndex);
@@ -809,7 +817,9 @@ function colorClass (colors, i) {
 
 The problem of that approach is – it tends to create spaghetti code. And it's
 a nightmare to maintain such code! Therefore, it is necessary for our sanity
-to follow some sort of pattern so our code becomes easier to maintain and refactor.
+to follow some sort of pattern so our code becomes easier to maintain and refactor. In specific example, future developers may ask where is the button event defined
+and they may find themselves ending up at a random `app.js` file (which the name
+is not descriptive at all).
 
 Also, you create a reusable piece of code by limiting the logic to be done following
 the component. In example, to re-use this color square, you only need to apply
@@ -858,6 +868,10 @@ class RandomList {
 }
 ```
 
+> There is a trend of moving the rendering from the innerHTML to Virtual DOM like
+> using React as rendering engine. In our plain old JavaScript use case, we can
+> simply use the innerHTML to replace the rendering.
+
 ## State management
 
 State management is quite a big problem in the front end application as soon as
@@ -869,14 +883,19 @@ software engineer, we want to keep this data in a single place so we can sanely
 assume the data state when reading from it. In other word, the worst that you
 can do is duplicate the state accidentally.
 
+To re-emphasize on the need of state management, we will use the following image:
+
+![State management need](imgs/state-management.png)
+
 There were some past tries to tackle the state management problems in the past.
 The popular ones nowadays are [Redux](https://redux.js.org/), [MobX](https://github.com/mobxjs/mobx).
-In this section, we focus on the Redux pattern while trying not to use Redux into
-our application.
+In this section, we focus on the Redux pattern as it is the simplest in its implementation.
 
 ![Redux architecture](imgs/redux-architecture.png)
 
 We will modify the state of the color square earlier to use Redux as central store.
+
+To start with, we will discuss about the store implementation below:
 
 ```javascript
 // Store is heavily inspired by Redux from React pattern to handle state management
@@ -940,7 +959,7 @@ function deepCopy(obj) {
 }
 ```
 
-You can use above store along as below:
+Simplest hello world example of using store above:
 
 ```javascript
 // reducer is single action to change data state
@@ -969,63 +988,95 @@ store.dispatch({
 });
 ```
 
-How do we use store with WebComponent above?
+How do we use Store with WebComponent?
 
 ```javascript
+const colors = ['--red', '--green', '--blue'];
+var index = -1;
+
 // reducer is single action to change data state
 const reducer = (state, action) => {
     switch (action.type) {
-    case 'TEST':
-        state.data = action.payload;
-        return state;
-    default:
-        return state;
+        case 'CHANGE_COLOR':
+            state.index = (state.index+1) % colors.length;
+            state.color = colorClass(colors, state.index);
+            return state;
+        default:
+            return state;
     }
 };
 
-// create new store object
-const store = Store(reducer, {});
+// helper class
+function colorClass (colors, i) {
+    if (i < 0) {
+        return '';
+    }
+    return colors[i];
+}
 
-ExampleComponentWithCI(store);
+// create new store object
+const store = new Store(reducer, {});
+
+// register the RGBSquareComponent under custom element `rgb-square`
+window.customElements.define('rgb-square', RGBSquareComponent(store));
 
 // dependency injection to send store to WebComponent through Closure
-// Dependency Injection pattern to inject store into the ExampleComponent
-function ExampleComponentWithCI (store) {
-	return class ExampleComponent extends window.HTMLElement {
-		constructor () {
-			super();
-			this.store = store;
-			console.log('ExampleComponent#Got store', this.store);
-			// initial DOM rendering
-			this.textContent = this.store.state.example;
+function RGBSquareComponent (store) {
+    return class RGBSquareComponent extends window.HTMLElement {
+        constructor () {
+            super();
+            // assign store to its instance variable
+            this.store = store;
 
-			this.onStateChange = this.handleStateChange.bind(this);
+            // this bind is important so that we can call `this` in the handleStateChange correctly
+            this.onStateChange = this.handleStateChange.bind(this);
 
-			// add click event
-			this.addEventListener('click', () => {
-				this.store.dispatch({
-					type: 'TEST',
-					payload: 'You clicked this element'
-				});
-			});
-		}
+            // add click event
+            this.addEventListener('click', () => {
+                this.store.dispatch({
+                    type: 'CHANGE_COLOR',
+                });
+            });
+        }
 
-		handleStateChange (newState) {
-			console.log('ExampleComponent#stateChange', this);
-			this.textContent = newState.data;
-		}
+        handleStateChange (newState) {
+            console.log('RGBSquareComponent#stateChange', this, this.store.state);
+            // remove any existing colors (if any)
+            colors.forEach(c => {
+                this.classList.remove(c);
+            });
+            if (newState.color) {
+                // render up to date color
+                this.classList.add(newState.color);
+            }
+        }
 
-		connectedCallback () {
-			console.log('ExampleComponent#onConnectedCallback');
-			this.store.subscribe(this.onStateChange);
-		}
+        connectedCallback () {
+            console.log('RGBSquareComponent#onConnectedCallback');
+            this.store.subscribe(this.onStateChange);
+        }
 
-		disconnectedCallback () {
-			console.log('ExampleComponent#onDisconnectedCallback');
-			this.store.unsubscribe(this.onStateChange);
-		}
-	};
+        disconnectedCallback () {
+            console.log('RGBSquareComponent#onDisconnectedCallback');
+            this.store.unsubscribe(this.onStateChange);
+        }
+    };
 }
+
+// more examples on demonstrating re-using the store and dispatch
+
+function changeColor () {
+    store.dispatch({
+        type: 'CHANGE_COLOR'
+    });
+}
+
+function continueChangeColor () {
+    changeColor();
+    setTimeout(continueChangeColor, 1000);
+}
+
+continueChangeColor();
 ```
 
 ## Resources

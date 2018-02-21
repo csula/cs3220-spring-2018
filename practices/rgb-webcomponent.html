@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RGB Square with WebComponents</title>
+</head>
+<body>
+    <style>
+        rgb-square {
+            display: block;
+            background-color: #fff;
+            width: 2em;
+            height: 2em;
+            margin: 1em;
+            border: 1px solid #eee;
+        }
+
+        rgb-square.--red {
+            background-color: red;
+        }
+        rgb-square.--blue {
+            background-color: blue;
+        }
+        rgb-square.--green {
+            background-color: green;
+        }
+    </style>
+
+    <rgb-square></rgb-square>
+    <rgb-square></rgb-square>
+    <rgb-square></rgb-square>
+    <rgb-square></rgb-square>
+
+    <button onclick="changeColor()">Change color</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.1.0/webcomponents-lite.js"></script>
+
+    <script>
+        // Store is heavily inspired by Redux from React pattern to handle state management
+        class Store {
+            /**
+             * Create a new store with specific reducer and optionally initial state
+             * @constructor
+             * @param {function} reducer - the reducer to mutate state
+             * @param {initialState} object - the initial state
+             */
+            constructor (reducer, initialState = {}) {
+                this.reducer = reducer;
+                // listeners are internal state to keep track of which reducers to call in this
+                // order
+                this.listeners = [];
+                // initial internal state
+                this.__state = initialState;
+            }
+
+            /**
+             * Overwrites getter for `state` variable to be READ-ONLY state through
+             * deepCopy method
+             */
+            get state () {
+                return deepCopy(this.__state);
+            }
+
+            /**
+             * `dispatch` controls state changes. One should use only dispatch to show
+             * intent to change state and go through reducer to change so
+             * @param {object} action - action should contain both `type` and `payload`
+             */
+            dispatch (action) {
+                this.__state = this.reducer(this.state, action);
+                this.listeners.forEach(l => l(this.state, action));
+            }
+
+            /**
+             * subscribe allows consumer to listen for state changes
+             * @param {function} listener - function contains state and action as its arguments
+             */
+            subscribe (listener) {
+                this.listeners.push(listener);
+            }
+
+            /**
+             * unsubscribe allows consumer to stop listening to state changes
+             * @param {function} listener - the function consumer subscribed earlier
+             */
+            unsubscribe (listener) {
+                this.listeners = this.listeners.filter(l => l != listener);
+            }
+        }
+
+/**
+ * deepCopy is helper method to create deep copy of certain object
+ * @param {object} obj - the object to copy from
+ */
+function deepCopy(obj) {
+    return JSON.parse(JSON.stringify(obj));
+}
+
+const colors = ['--red', '--green', '--blue'];
+var index = -1;
+
+// reducer is single action to change data state
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'CHANGE_COLOR':
+            state.index = (state.index+1) % colors.length;
+            state.color = colorClass(colors, state.index);
+            return state;
+        default:
+            return state;
+    }
+};
+
+// helper class
+function colorClass (colors, i) {
+    if (i < 0) {
+        return '';
+    }
+    return colors[i];
+}
+
+// create new store object
+const store = new Store(reducer, {});
+
+// register the RGBSquareComponent under custom element `rgb-square`
+window.customElements.define('rgb-square', RGBSquareComponent(store));
+
+// dependency injection to send store to WebComponent through Closure
+function RGBSquareComponent (store) {
+    return class RGBSquareComponent extends window.HTMLElement {
+        constructor () {
+            super();
+            // assign store to its instance variable
+            this.store = store;
+
+            // this bind is important so that we can call `this` in the handleStateChange correctly
+            this.onStateChange = this.handleStateChange.bind(this);
+
+            // add click event
+            this.addEventListener('click', () => {
+                this.store.dispatch({
+                    type: 'CHANGE_COLOR',
+                });
+            });
+        }
+
+        handleStateChange (newState) {
+            console.log('RGBSquareComponent#stateChange', this, this.store.state);
+            // remove any existing colors (if any)
+            colors.forEach(c => {
+                this.classList.remove(c);
+            });
+            if (newState.color) {
+                // render up to date color
+                this.classList.add(newState.color);
+            }
+        }
+
+        connectedCallback () {
+            console.log('RGBSquareComponent#onConnectedCallback');
+            this.store.subscribe(this.onStateChange);
+        }
+
+        disconnectedCallback () {
+            console.log('RGBSquareComponent#onDisconnectedCallback');
+            this.store.unsubscribe(this.onStateChange);
+        }
+    };
+}
+
+// more examples on demonstrating re-using the store and dispatch
+
+function changeColor () {
+    store.dispatch({
+        type: 'CHANGE_COLOR'
+    });
+}
+
+function continueChangeColor () {
+    changeColor();
+    setTimeout(continueChangeColor, 1000);
+}
+
+continueChangeColor();
+    </script>
+</body>
+</html>
