@@ -9,6 +9,7 @@
     * DOM rendering [1 pt]
     * Event binding to buy [1 pt]
 * src/reducers.js [1 pt]
+    * handle `BUY_GENERATOR` action
 
 > Starting from this lab and onward, you will need to pass unit tests
 > executed by TravisCI. In other word, there should be a green check mark

@@ -4,7 +4,12 @@
 
 * src/views/story.js [1 pt]
 * src/models/story.js [1 pt]
-* src/game.js [3 pts]
+    * isUnlockedYet
+    * unlock
+* src/game.js [1 pts]
+* src/reducer.js [2 pts]
+    * handle `INCREMENT` action
+    * handle `CHECK_STORY` action
 
 > Should pass unit test executed by TravisCI
 
@@ -31,17 +36,27 @@ const currentState = {
             unlockValue: 10
         }
     ],
-    stories: []
+    stories: [
+        {
+            name: 'Grandma shows up',
+            description: 'Grandma baking cookies',
+            triggeredAt: 10,
+            state: 'hidden'
+        }
+    ]
 }
 ```
 
-From this state (which is stored under the `store.js`), you need to
-implement the game loop that will tick once every second (see `game.js` for
-how it is executed once every second. When the loop get called, you need to
-read the game state object to determine how much of the resouces to
-generator (through `generator.generate` function.
+From this initial state (which is stored under the `src/store.js`), you need to
+implement the game loop that will tick once every second (see `src/game.js` for
+how it is executed). When the loop get called, you need to
+read the game state object from `store.state` to determine how much of the
+resources to generate through `generator.generate` function.
 
 With the generator generating the value on the background, the counter we implemented back in lab1.md should also display up to date number.
+
+> Assuming all implementation follows the technical specs, this should be done
+> out of box by using the central store with proper subscribe method
 
 ### Story Component
 
@@ -63,8 +78,8 @@ You should find this familiar with the implementation you did in lab 3 earlier a
 ### Technical
 
 * Game loop should increment value under store through reducers
-* Game loop should trigger story to be visible (based on counter value)
-* Story component should be implemented using WebComponent spec
-* Should implement `isUnlockYet` and `unlock` method under story
+* Game loop should trigger story to be visible (based on counter value) through reducers
+* Story book component should be implemented using WebComponent spec
+* Should implement `isUnlockYet` and `unlock` method under story model
 * Pass all unit tests
 
