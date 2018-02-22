@@ -19,9 +19,9 @@
 We are going to implement a couple components following [WebComponent][1]
 spec. Specifically, we will implement the Generator components using WebComponents.
 
-To start with, you will need to download lab 3 release into your lab3 folder: https://github.com/rcliao/cookie-clicker/releases
+To start with, you will need to download lab 3 release into your lab3 folder: https://github.com/rcliao/cookie-clicker/releases/tag/lab3
 
-> The releases are blank intentionally until the lab 3 publish date as Eric is working on adding tests … :bow:
+> Click on `source code` to download entire folder
 
 ## Requirements
 
@@ -39,10 +39,11 @@ Following does not need to be functional just yet:
 
 ### Technical
 
+* Generator model should pass unit tests on `getCost` and `generate` function
 * Generator view component should be implementing WebComponent spec
-* Generator quantity should be stored under `window.store` (in Redux)
+* Generator quantity should be stored under `store.state`
 * Generator should read state from `store`
-* Generator should modify state through `reducer.js`
+* Generator should only modify state through `reducer.js`
 
 [1]: https://developers.google.com/web/fundamentals/web-components/
 [2]: https://redux.js.org/
