@@ -1149,7 +1149,7 @@ Once configured, you should be able to see green check/red cross on your commit
 and pull requests moving forward.
 
 ![Pull requests checkmark demo](imgs/ci-pull-request.png)
-![Commit checkmark demo](imgs/ci-commit.png)
+![Commit checkmark demo](imgs/ci-commit-detail.png)
 
 ### JavaScript Bundler
 
