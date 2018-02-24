@@ -17,6 +17,7 @@
 
 * [Component pattern](#component-pattern)
 * [State management](#state-management)
+* [JavaScript tooling](#javascript-tooling)
 * [JavaScript testing](#javascript-testing)
 * [JavaScript bundler](#javascript-bundler)
 
@@ -1079,7 +1080,7 @@ function continueChangeColor () {
 continueChangeColor();
 ```
 
-## Prefix to optional topics
+## JavaScript Tooling
 
 Starting from the following topics, I will go over them in a brief manner since
 these are the tools that is provided in lab 3 and homework 1.
@@ -1088,7 +1089,7 @@ Students are not expected to understand the topic and use it as their own. Inste
 students are expected to understand how to use them when the tools are provided
 in their favor of verifying code correctness.
 
-## Prerequisites of JavaScript tools
+### Prerequisites
 
 Before we move into the tooling section, students will need to install 
 [Node.js](https://nodejs.org/en/). Please go ahead and download Node.js from
@@ -1098,17 +1099,17 @@ To verify installation, you can run like below with `node -v` and `npm -v`:
 
 ```
 ~
-[I] ➜ node -v
+> node -v
 v9.3.0
 
 ~
-[I] ➜ npm -v
+> npm -v
 5.6.0
 ```
 
 Once you have Node.js installed, we are ready for the tooling section.
 
-## JavaScript Testing
+### JavaScript Testing
 
 JavaScript testing is possibly done with many different runners like Mocha, Jest, Chai … etc.
 In this semester, we pick Jest as test runner.
@@ -1125,7 +1126,32 @@ It has `test` function to define test spec and use `expect` to compare output.
 
 To run the test, the starter project is set up with `npm test` for running tests.
 
-## JavaScript Bundler
+#### TravisCI
+
+Travis is another tool we will be using indirectly to run our tests. In essence,
+it's a cloud machine that automatically runs our tests on every commit.
+
+The benefit Travis provides to us it to show the test is passing or failing.
+
+To configure TravisCI, you will need a file called `.travis.yml` and content similar to below:
+
+```yaml
+matrix:
+  include:
+    - language: node_js
+      node_js:
+        - "8"
+      before_script:
+        - cd client
+```
+
+Once configured, you should be able to see green check/red cross on your commit
+and pull requests moving forward.
+
+![Pull requests checkmark demo](imgs/ci-pull-request.png)
+![Commit checkmark demo](imgs/ci-commit.png)
+
+### JavaScript Bundler
 
 As discussed earlier last week, the JavaScript module is not yet ready for browser
 to use. Therefore, we need to define a "bundler" and "pre-processor" to generate
