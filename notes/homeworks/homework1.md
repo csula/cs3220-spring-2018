@@ -2,6 +2,7 @@
 
 ## Deliverables
 
+* Single txt file containing link to pull request
 * src/views/story.js [1 pt]
 * src/models/story.js [1 pt]
     * isUnlockedYet
@@ -12,6 +13,12 @@
     * handle `CHECK_STORY` action
 
 > Should pass unit test executed by TravisCI
+
+Submission format as below
+
+```
+https://github.com/csula-students/cs-3220-spring-2018-rcliao/pull/5
+```
 
 ## Description
 

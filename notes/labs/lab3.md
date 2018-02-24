@@ -2,6 +2,7 @@
 
 ## Deliverables
 
+* Single txt file containing link to pull request
 * src/models/generator.js [2 pts]
     * `getCost` function [1 pt]
     * `generate` function [1 pt]
@@ -14,6 +15,12 @@
 > Starting from this lab and onward, you will need to pass unit tests
 > executed by TravisCI. In other word, there should be a green check mark
 > showing under your Pull Request.
+
+Submission format should be like below:
+
+```
+https://github.com/csula-students/cs-3220-spring-2018-rcliao/pull/5
+```
 
 ## Descriptions
 
