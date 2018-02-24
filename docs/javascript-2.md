@@ -190,6 +190,13 @@ npm test
 ```
 
 
+#### Travis CI
+
+```
+.travis.yml
+```
+
+
 ### JavaScript Bundler
 
 ```
