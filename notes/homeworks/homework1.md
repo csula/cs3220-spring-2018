@@ -20,11 +20,35 @@ Submission format as below
 https://github.com/csula-students/cs-3220-spring-2018-rcliao/pull/5
 ```
 
+## Get Started
+
+To get started with, you can download the changes from https://github.com/rcliao/cookie-clicker/releases/tag/homework1 to overwrite a couple files you have from lab 3:
+
+> Changes can be found here https://github.com/rcliao/cookie-clicker/commit/eb95c4dbb0cc24da7559da3d900b2235e081fb80
+
+```
+client/src/constants.js
+client/src/game.js
+client/src/views/story-book.js
+client/test/mock.js
+client/test/reducer.test.js
+client/test/story.test.js
+```
+
+## Running tests
+
+To run the test, ensure you have Node.js installed and run the following command
+under `client` folder
+
+```
+npm test
+```
+
 ## Description
 
 ### Game Loop
 
-Continue from lab 3, you should have the generator model and view component
+Continue from *lab 3*, you should have the generator model and view component
 implemented. This means you should be able to buy generator from the
 button.
 

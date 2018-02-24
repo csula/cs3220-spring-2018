@@ -22,14 +22,25 @@ Submission format should be like below:
 https://github.com/csula-students/cs-3220-spring-2018-rcliao/pull/5
 ```
 
-## Descriptions
-
-We are going to implement a couple components following [WebComponent][1]
-spec. Specifically, we will implement the Generator components using WebComponents.
+## Get Started
 
 To start with, you will need to download lab 3 release into your lab3 folder: https://github.com/rcliao/cookie-clicker/releases/tag/lab3
 
 > Click on `source code` to download entire folder
+
+## Running tests
+
+To run the test, ensure you have Node.js installed and run the following command
+under `client` folder
+
+```
+npm test
+```
+
+## Descriptions
+
+We are going to implement a couple components following [WebComponent][1]
+spec. Specifically, we will implement the Generator components using WebComponents.
 
 ## Requirements
 
