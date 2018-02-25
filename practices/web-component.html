@@ -1,0 +1,73 @@
+<!-- import webcomponent polyfill for other browsers -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.1.0/webcomponents-lite.js"></script>
+
+<style>
+    rgb-square {
+        display: block;
+        background-color: #fff;
+        width: 2em;
+        border: 1px solid;
+        height: 2em;
+    }
+
+    rgb-square.--red {
+        background-color: red;
+    }
+    rgb-square.--blue {
+        background-color: blue;
+    }
+    rgb-square.--green {
+        background-color: green;
+    }
+</style>
+
+<rgb-square></rgb-square>
+<rgb-square></rgb-square>
+<rgb-square></rgb-square>
+<rgb-square></rgb-square>
+<rgb-square></rgb-square>
+<rgb-square></rgb-square>
+<rgb-square></rgb-square>
+<rgb-square></rgb-square>
+<rgb-square></rgb-square>
+
+<script>
+// extends from HTMLElement is the key here
+class RGBSquare extends window.HTMLElement {
+    // in constructor, define the instance variables
+    constructor () {
+        super();
+        // this is the "DOM" of what is created, e.g. <rgb-square>
+        this.colors = ['--red', '--green', '--blue'];
+        this.colorIndex = -1; // no color
+        // use closure to create consistent function reference
+        this.onClickEvent = () => this._updateColor();
+    }
+    // connectedCallback is called when the DOM is rendered
+    connectedCallback () {
+        console.log('Element connected');
+        this.addEventListener('click', this.onClickEvent);
+    }
+    // disconnectedCallback is called when the DOM is removed from the page
+    disconnectedCallback () {
+        console.log('Element disconnected');
+        this.removeEventListener('click', this.onClickEvent);
+    }
+    // Same helper methods as above
+    _updateColor () {
+        const oldClass = this.colorClass(this.colorIndex);
+        const newClass = this.colorClass(++this.colorIndex);
+        if (oldClass) {
+            this.classList.remove(oldClass);
+        }
+        this.classList.add(newClass);
+    }
+    colorClass (i) {
+        if (i < 0) {
+            return '';
+        }
+        return this.colors[i];
+    }
+}
+window.customElements.define('rgb-square', RGBSquare);
+</script>

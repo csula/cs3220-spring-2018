@@ -1,0 +1,28 @@
+<!-- import webcomponent polyfill for other browsers -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.1.0/webcomponents-lite.js"></script>
+
+<my-hello data-message="First"></my-hello>
+<my-hello data-message="Second"></my-hello>
+<my-hello data-message="Last"></my-hello>
+
+<script>
+class HelloElement extends window.HTMLElement {
+    constructor () {
+        super();
+    }
+    connectedCallback () {
+        const message = this.dataset.message;
+        this.innerHTML = `
+            <h1>${message}</h1>
+            <button>Click me</button>
+        `;
+        this.querySelector('button')
+            .addEventListener('click', () => {
+                console.log(this);
+            });
+    }
+    disconnectedCallback () {
+    }
+}
+window.customElements.define('my-hello', HelloElement);
+</script>

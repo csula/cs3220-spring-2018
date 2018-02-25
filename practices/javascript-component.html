@@ -1,0 +1,79 @@
+<style>
+    .rgb-square {
+        display: block;
+        background-color: #fff;
+        width: 2em;
+        border: 1px solid;
+        height: 2em;
+    }
+
+    .rgb-square.--red {
+        background-color: red;
+    }
+    .rgb-square.--blue {
+        background-color: blue;
+    }
+    .rgb-square.--green {
+        background-color: green;
+    }
+</style>
+
+<span class="rgb-square"></span>
+<span class="rgb-square"></span>
+<span class="rgb-square"></span>
+<span class="rgb-square"></span>
+<span class="rgb-square"></span>
+<span class="rgb-square"></span>
+<span class="rgb-square"></span>
+<span class="rgb-square"></span>
+<span class="rgb-square"></span>
+<span class="rgb-square"></span>
+<span class="rgb-square"></span>
+
+<script>
+class RGBSquare {
+    /**
+     * Pass the dom element into the JavaScript class to attach event & data
+     */
+    constructor(root) {
+        this.root = root;
+        this.colors = ['--red', '--green', '--blue'];
+        this.colorIndex = -1; // no color
+        this.onClick = () => this._updateColor();
+        this.init();
+    }
+
+    // define its life cycle with init
+    init () {
+        this.root.addEventListener('click', this.onClick);
+    }
+
+    // on destroy, it should remove all the event listeners so it doesn't create
+    // memory leak
+    destroy () {
+        this.root.removeEventListener('click', this.onClick);
+    }
+
+    _updateColor () {
+        let oldClass = this.colorClass(this.colorIndex);
+        let newClass = this.colorClass(++this.colorIndex);
+        if (oldClass) {
+            this.root.classList.remove(oldClass);
+        }
+        this.root.classList.add(newClass);
+    }
+
+    colorClass (i) {
+        if (i < 0) {
+            return '';
+        }
+        return this.colors[i];
+    }
+}
+
+// to use it
+const doms = document.querySelectorAll('.rgb-square');
+doms.forEach(dom => {
+    new RGBSquare(dom);
+});
+</script>

@@ -19,6 +19,19 @@
 
 <span class="rgb-square"></span>
 <button>Change color</button>
+<button>Change color</button>
+<button>Change color</button>
+<button>Change color</button>
+<button>Change color</button>
+<button>Change color</button>
+<button>Change color</button>
+<button>Change color</button>
+<button>Change color</button>
+<button>Change color</button>
+<button>Change color</button>
+<button>Change color</button>
+<button>Change color</button>
+<button>Change color</button>
 
 <script>
     // PubSub is single object for publish data to multiple subscribers
@@ -50,9 +63,9 @@
     var index = -1; // nothing to begin with
 
     const dom = document.querySelector('.rgb-square');
-    const btn = document.querySelector('button');
-    btn.addEventListener('click', () => {
-        pubSub.publish(window.state.index);
+    const btns = document.querySelectorAll('button');
+    btns.forEach(btn => {
+        btn.addEventListener('click', publish);
     });
 
     pubSub.subscribe(action => {
@@ -70,12 +83,14 @@
         dom.classList.add(newColor);
     });
 
-    dom.addEventListener('click', function() {
+    dom.addEventListener('click', publish);
+
+    function publish() {
         pubSub.publish({
             type: 'CHANGE_COLOR',
             payload: window.state.index
         });
-    });
+    }
 
     function getColor (colors, index) {
         if (index < 0) {
