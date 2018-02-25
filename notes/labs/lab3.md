@@ -29,6 +29,7 @@ https://github.com/csula-students/cs-3220-spring-2018-rcliao/pull/5
 Here are a list of things might be changed since the lab announcement
 
 * https://github.com/rcliao/cookie-clicker/commit/92f76e63dbc4a40884c08b5864a6d62ecf40ef5f
+* https://github.com/rcliao/cookie-clicker/commit/31af872037d6f02ce4ef3217a954ff7dfa9b9854
 
 ## Get Started
 
