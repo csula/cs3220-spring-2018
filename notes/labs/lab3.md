@@ -3,6 +3,8 @@
 ## Deliverables
 
 * Single txt file containing link to pull request
+* necessary changes to index.html from lab 2
+    * generator should be using `<game-generator data-id="0"></game-generator>`
 * src/models/generator.js [2 pts]
     * `getCost` function [1 pt]
     * `generate` function [1 pt]
@@ -21,6 +23,12 @@ Submission format should be like below:
 ```
 https://github.com/csula-students/cs-3220-spring-2018-rcliao/pull/5
 ```
+
+## Changelog
+
+Here are a list of things might be changed since the lab announcement
+
+* https://github.com/rcliao/cookie-clicker/commit/92f76e63dbc4a40884c08b5864a6d62ecf40ef5f
 
 ## Get Started
 
