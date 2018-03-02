@@ -46,6 +46,41 @@ WEB-INF/
 ```
 
 
+### Prerequisites
+
+* Install Java
+* Download tomcat http://tomcat.apache.org/
+* Download JSTL https://csns.calstatela.edu/download.html?fileId=3812279
+* Download JDBC Driver https://dev.mysql.com/downloads/connector/j/
+
+
+### 3 Ways to Run Tomcats
+
+
+#### Running Tomcat locally
+
+* Put compiled source under `webapps` folder
+    * *.class -> webapps/{ROOT}/WEB-INF/classes
+    * web.xml -> webapps/{ROOT}/WEB-INF/
+    * *.jsp -> webapps/{ROOT}/WEB-INF/
+* Run `./bin/startup.sh`
+* open up http://localhost:8080
+
+
+#### Running Tomcat in Eclipse
+
+See Dr. Sun's amazing tutorial:
+
+https://csns.calstatela.edu/wiki/content/cysun/course_materials/eclipse
+
+
+#### Running Tomcat with Gradle
+
+* `./gradlew appRun`
+* open up http://localhost:8080
+
+
+
 ### Servlet Hello World
 
 ```java
