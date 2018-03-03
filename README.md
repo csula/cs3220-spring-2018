@@ -39,18 +39,18 @@ The schedule below is tentative and is subject to change.
 | 2  [02/03]         | [HTML & CSS][2] | [Exercise 2][26] |
 | 3  [02/10]         | [HTML & CSS][2] | [Lab 1][16] |
 | 4  [02/17]         | [Intro to JavaScript][3] | [Lab 2][17] |
-| 5  [02/24]         | [Intro to JavaScript][3] | [Lab 3][18] |
-| 6  [03/03]         | [Java Servlet][4] | [Homework 1][12] |
-| 7  [03/10]         | [Java Servlet][4] | [Lab 4][19] |
+| 5  [02/24]         | [Intro to JavaScript][3] |  |
+| 6  [03/03]         | [Intro to JavaScript][3] | [Lab 3][18] |
+| 7  [03/10]         | [Java Servlet][4] | [Homework 1][12] |
 | 8  [03/17]         | [Midterm][5] |  |
-| 9  [03/24]         | [JSP & JSTL][6] | [Lab 5][20], [Homework 2][13] |
+| 9  [03/24]         | [Java Servlet][4] | [Lab 4][19] |
 | 10 [03/31]         | Spring Break | No class |
-| 11 [04/07]         | [MySQL][7] |  |
-| 12 [04/14]         | [Database][7] | [Lab 6][21] |
-| 13 [04/21]         | No class | [Homework 3][14] |
-| 14 [04/28]         | [Web Architecture][8] & [Java Web Framework][10] | [Lab 7][22] |
-| 15 [05/05]         | [Front end JavaScript Framework][9] | [Homework 4][15] |
-| 16 [05/12]         | [Front end JavaScript Framework][9], [Intro to Docker][24] | [Lab 8][23] |
+| 11 [04/07]         | [JSP & JSTL][6] | [Lab 5][20], [Homework 2][13] |
+| 12 [04/14]         | [MySQL][7] | [Lab 6][21] |
+| 13 [04/21]         | No class |  |
+| 14 [04/28]         | [Database][7] | [Homework 3][14], [Lab 7][22] |
+| 15 [05/05]         | [Web Architecture][8] & [Java Web Framework][10] | [Homework 4][15] |
+| 16 [05/12]         | [Java Web Framework][10], [Intro to Docker][24] | [Lab 8][23] |
 | Final [05/19]      | [Final][11] |  |
 
 [1]: notes/introduction.md
