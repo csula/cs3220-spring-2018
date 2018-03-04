@@ -1,0 +1,29 @@
+{
+  "name": "incrementalGame-framework-client",
+  "version": "1.0.0",
+  "description": "An incremental game famework front end app",
+  "main": "src/app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "pretest": "npm install",
+    "test": "jest",
+    "build": "webpack",
+    "watch": "webpack -w"
+  },
+  "author": "Eric Liao <rcliao01@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^1.0.22"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.0.4",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^22.0.4",
+    "regenerator-runtime": "^0.11.1",
+    "webpack": "^3.10.0"
+  }
+}

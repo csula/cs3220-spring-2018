@@ -1,0 +1,16 @@
+body {
+    background-color: pink;
+}
+
+game-button button {
+    font-size: 24px;
+    padding: 0.5em 1em;
+}
+
+game-counter {
+    font-size: 32px;
+}
+
+game-giphy img {
+    width: 3em;
+}
