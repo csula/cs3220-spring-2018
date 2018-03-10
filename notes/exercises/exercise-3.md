@@ -1,5 +1,12 @@
 # Exercise 3
 
+## Deliverables
+
+* Single txt file containing link to both pull request and CS3 application URL
+* `GameInfoServlet.java`
+
+## Description
+
 We will start our first Java Tomcat Web application in this exercise.
 
 As usual, this may be the first time many of students interact with Java and Tomcat;
@@ -32,6 +39,7 @@ about how to set it up:
 
 * https://github.com/csula/Utilities/blob/master/setups/java-gradle-setup.md
 * https://github.com/csula/Utilities/blob/master/setups/java-tomcat.md
+* https://github.com/csula/cs3220-spring-2018/blob/master/notes/utils/cs3-deployment.md
 
 Make sure you have Java and Tomcat installed correctly!
 
