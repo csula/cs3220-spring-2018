@@ -3,12 +3,12 @@
 ## Deliverables
 
 * Single txt file containing link to pull request
-* src/views/story.js [1 pt]
-* src/models/story.js [1 pt]
+* src/views/story.js [2 pts]
+* src/models/story.js [2 pts]
     * isUnlockedYet
     * unlock
-* src/game.js [1 pts]
-* src/reducer.js [2 pts]
+* src/game.js [2 pts]
+* src/reducer.js [4 pts]
     * handle `INCREMENT` action
     * handle `CHECK_STORY` action
 
