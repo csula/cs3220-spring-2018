@@ -6,9 +6,9 @@
 
 Pull request should at least containing the following changed files:
 
-* AdminEventsServlet.java
-* MemoryEventsDAOImpl.java
-* app.css
+* `src/main/java/edu/csula/storage/web/AdminEventsServlet.java`
+* `src/main/java/edu/csula/storage/servlet/EventsDAOImpl.java`
+* `app.css`
 
 ## Descriptions
 
@@ -20,8 +20,74 @@ configuration page like below:
 
 And your mission is to create Java Servlets that:
 
-* Display the page as above
-* Handle the necessary persistence about event information
+* Display the page like above
+* Handle the necessary persistence transaction about event information
+
+> Hint, you may need to handle the `id` as **query parameter** so that you know if
+> user is currently editing any event or not
+
+## Get Started
+
+Download the starter code from 
+https://github.com/rcliao/cookie-clicker/releases/tag/lab4
+
+Once downloaded, you have a couple files you have to pay attention to:
+
+```
+~/dev/sandbox/cookie-clicker master
+❯ tree -I 'node_modules|package-*|client|build|dest|gradle*|scripts|tags'
+.
+├── README.md
+├── build.gradle
+├── settings.gradle
+└── src
+    ├── main
+    │   ├── java
+    │   │   ├── edu
+    │   │   │   └── csula
+    │   │   │       ├── models
+    │   │   │       │   ├── Event.java
+    │   │   │       │   └── Generator.java
+    │   │   │       ├── storage
+    │   │   │       │   ├── BaseDAO.java
+    │   │   │       │   ├── EventsDAO.java
+    │   │   │       │   ├── GeneratorsDAO.java
+    │   │   │       │   ├── Storage.java
+    │   │   │       │   └── servlet
+    │   │   │       │       ├── EventsDAOImpl.java
+    │   │   │       │       └── GeneratorsDAOImpl.java
+    │   │   │       └── web
+    │   │   │           ├── AdminEventsServlet.java
+    │   │   │           ├── AdminGeneratorsServlet.java
+    │   │   │           └── HelloServlet.java
+    │   │   └── hello
+    │   │       └── SimpleMath.java
+    │   └── webapp
+    │       └── WEB-INF
+    │           └── web.xml
+    └── test
+        └── java
+            ├── edu
+            │   └── csula
+            │       ├── models
+            │       │   └── EventTest.java
+            │       └── storage
+            │           └── servlet
+            │               └── EventsDAOImplTest.java
+            └── hello
+                └── SimpleMathTest.java
+
+```
+
+> Specifically, you need to get everything under `src/` folder over with `build.gradle` to run the unit tests
+
+Once you have downloaded the starter code, you want to start by looking at
+the `EventsDAOImpl.java` first to implement all functionalities inside in
+order to pass unit tests from `./gradlew check` command.
+
+Then, your next step is to fill in the blank under `AdminEventsServlet.java` to render HTML and handle transaction accordingly.
+
+Once you are done coding, you want to deploy the code to CS3 server following this article https://github.com/csula/cs3220-spring-2018/blob/master/notes/utils/cs3-deployment.md
 
 ## Requirements
 
@@ -33,6 +99,7 @@ And your mission is to create Java Servlets that:
 
 ### Technical
 
-* Application needs to be deployed to CS3 server
-* Application should store the event information in application scope
+* Application needs to be deployed to CS3 server and working
+* Application should store the event information in the application scope
 * Application should display HTML with proper CSS (similar to what you have accomplished in exercise-2)
+* `./gradlew check` should pass
