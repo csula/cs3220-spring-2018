@@ -41,6 +41,9 @@
 ```
 
 
+https://httpstatuses.com/
+
+
 #### Common Response Codes
 
 * 200 (Okay)
@@ -58,6 +61,24 @@
 * Validate request
 * Data Storage Transaction
 * Return response
+
+
+```java
+if (!isAuthenticated(request) || isAuthorized(request)) {
+	// return 403 UNAUTHORIZED response
+}
+DataTransferObject dto = parse(request);
+if (!dto.isValid()) {
+	// return 400 BAD REQUEST response
+}
+DatabaseAccessObject dao = new DAO(storage);
+try {
+	dao.save(dto);
+	// implicit Java Servlet returns 200 success
+} catch (Exception e) {
+	// return 503 SERVER ERROR response
+}
+```
 
 
 ### Redirects
