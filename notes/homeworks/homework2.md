@@ -7,7 +7,7 @@
 Pull request should at least containing the following changed files:
 
 * AdminGeneratorsServlet.java
-* MemoryGeneratorsDAOImpl.java
+* GeneratorsDAOImpl.java
 * app.css
 
 ## Descriptions
@@ -23,6 +23,21 @@ And your mission is to create Java Servlets that:
 * Display the page as above
 * Handle the necessary persistence about generators information
 
+## Get Started
+
+You should continue your code from lab 4 before except download additional two
+files under homework 2 release:
+https://github.com/rcliao/cookie-clicker/releases/tag/hw2
+
+The two files are:
+* `src/main/java/edu/csula/models/Generator.java`
+* `src/test/java/edu/csula/storage/servlet/GeneratorsDAOImplTest.java`
+
+Once download these two files, add those two files to be under your lab 4.
+
+And you are ready to start. Use `./gradlew check` to find all the failing tests
+and modify `GeneratorsDAOImpl.java` to fix the unit test.
+
 ## Requirements
 
 ### Functional
@@ -36,3 +51,4 @@ And your mission is to create Java Servlets that:
 * Application needs to be deployed to CS3 server
 * Application should store the generator information in application scope
 * Application should display HTML with proper CSS (similar to what you have accomplished in exercise-2)
+* Should pass all the unit tests from `./gradlew check`

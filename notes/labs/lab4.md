@@ -29,7 +29,7 @@ And your mission is to create Java Servlets that:
 ## Get Started
 
 Download the starter code from 
-https://github.com/rcliao/cookie-clicker/releases/tag/lab4
+https://github.com/rcliao/cookie-clicker/releases/tag/lab4-1
 
 Once downloaded, you have a couple files you have to pay attention to:
 
