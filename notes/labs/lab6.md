@@ -3,8 +3,7 @@
 ## Deliverables
 
 * Deploy to CS3 server
-* Getting information from database for meta data
-* Define schema for generator
+* Define schema for generators and events meta data
 
 ## Description
 

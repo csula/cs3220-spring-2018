@@ -2,7 +2,7 @@
 
 ## Deliverables
 
-* Finish remaining implementation of RESTful integration
+* Define RESTful end point for generators
 
 ## Description
 

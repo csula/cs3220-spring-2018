@@ -2,8 +2,7 @@
 
 ## Deliverables
 
-* Finish up the public site integration with meta data update
-* Define schema for events, resources
+* Change generators to read data from MySQL
 
 ## Description
 

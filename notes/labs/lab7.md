@@ -2,7 +2,7 @@
 
 ## Deliverables
 
-* Add RESTful endpoint
+* Change events configuration page to read data from MySQL
 
 ## Description
 
