@@ -114,12 +114,12 @@ The schedule below is tentative and is subject to change.
 | 8  [03/17]         | [Midterm][5] |  |
 | 9  [03/24]         | [Java Servlet][4] | [Lab 4][19] |
 | 10 [03/31]         | Spring Break | No class |
-| 11 [04/07]         | [JSP & JSTL][6] | [Lab 5][20], [Homework 2][13] |
-| 12 [04/14]         | [MySQL][7] | [Lab 6][21] |
-| 13 [04/21]         | No class |  |
-| 14 [04/28]         | [Database][7] | [Homework 3][14], [Lab 7][22] |
-| 15 [05/05]         | [Web Architecture][8] & [Java Web Framework][10] | [Homework 4][15] |
-| 16 [05/12]         | [Java Web Framework][10], [Intro to Docker][24] | [Lab 8][23] |
+| 11 [04/07]         | [Java Servlet][4] | [Lab 4][19] |
+| 12 [04/14]         | [JSP & JSTL][6] | [Lab 5][20], [Homework 2][13] |
+| 13 [04/21]         | [MySQL][7] | [Lab 6][21] |
+| 14 [04/28]         | No class |  |
+| 15 [04/05]         | [Database][7] | [Homework 3][14], [Lab 7][22] |
+| 16 [05/12]         | [Web Architecture][8] & [Java Web Framework][10] | [Homework 4][15] |
 | Final [05/19]      | [Final][11] |  |
 
 [1]: notes/introduction.md
