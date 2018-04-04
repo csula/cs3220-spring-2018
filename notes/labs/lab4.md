@@ -10,6 +10,20 @@ Pull request should at least containing the following changed files:
 * `src/main/java/edu/csula/storage/servlet/EventsDAOImpl.java`
 * `app.css`
 
+## Common Q&A
+
+### I use Eclipse, and this lab requires Gradle. What do I do?
+
+Follow http://www.vogella.com/tutorials/EclipseGradle/article.html to install
+Eclipse Gradle plugin.
+
+### Why is the `Event.java` fields all final?
+
+`final` makes sure that the variable cannot be re-assigned through out the entire
+runtime. In general, it's better practice to keep variable final so you can write
+more predictable code. If you have to _mutate_ variable, I suggest you to
+reconstruct another object and assign the list index to this item instead.
+
 ## Descriptions
 
 In this lab, we will pick up what we implemented back in exercise-2 with the
@@ -29,7 +43,7 @@ And your mission is to create Java Servlets that:
 ## Get Started
 
 Download the starter code from 
-https://github.com/rcliao/cookie-clicker/releases/tag/lab4-1
+https://github.com/rcliao/cookie-clicker/releases/tag/lab4-2
 
 Once downloaded, you have a couple files you have to pay attention to:
 
@@ -85,9 +99,12 @@ Once you have downloaded the starter code, you want to start by looking at
 the `EventsDAOImpl.java` first to implement all functionalities inside in
 order to pass unit tests from `./gradlew check` command.
 
-Then, your next step is to fill in the blank under `AdminEventsServlet.java` to render HTML and handle transaction accordingly.
+Then, your next step is to fill in the blank under `AdminEventsServlet.java` to
+render HTML and handle transaction accordingly.
 
-Once you are done coding, you want to deploy the code to CS3 server following this article https://github.com/csula/cs3220-spring-2018/blob/master/notes/utils/cs3-deployment.md
+Once you are done coding, you want to deploy the code to CS3 server following
+this article
+https://github.com/csula/cs3220-spring-2018/blob/master/notes/utils/cs3-deployment.md
 
 ## Requirements
 
@@ -96,10 +113,11 @@ Once you are done coding, you want to deploy the code to CS3 server following th
 * User should be able to create event passing event name, description and trigger value
 * User should be able to see a list of events
 * User should be able to modify a single event
+* User should be able to delete a single event
 
 ### Technical
 
 * Application needs to be deployed to CS3 server and working
-* Application should store the event information in the application scope
+* Application should store the event information in the _application scope_
 * Application should display HTML with proper CSS (similar to what you have accomplished in exercise-2)
-* `./gradlew check` should pass
+* `./gradlew check` should pass all unit tests
