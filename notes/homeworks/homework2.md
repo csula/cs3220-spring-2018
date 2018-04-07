@@ -31,7 +31,7 @@ And your mission is to create Java Servlets that:
 
 You should continue your code from lab 4 before except download additional two
 files under homework 2 release:
-https://github.com/rcliao/cookie-clicker/releases/tag/hw2-1
+https://github.com/rcliao/cookie-clicker/releases/tag/hw2-5
 
 The few files are:
 * `src/main/java/edu/csula/web/servlet/AuthenticationServlet.java`
@@ -42,7 +42,7 @@ The few files are:
 * `src/test/java/edu/csula/storage/servlet/GeneratorsDAOImplTest.java`
 * `src/test/java/edu/csula/storage/servlet/UsersDAOImplTest.java`
 
-Once download these two files, add those two files to be under your lab 4.
+Once download these two files, add those files to be under where your lab 4 was.
 
 And you are ready to start. Use `./gradlew check` to find all the failing tests
 and modify `GeneratorsDAOImpl.java` to fix the unit test.
@@ -52,6 +52,7 @@ and modify `GeneratorsDAOImpl.java` to fix the unit test.
 ### Functional
 
 * User shall login first prior to make any changes under `Admin*Servlet.java`
+* Should allow only `admin:cs3220password` user to login
 * If user is not currently login and go to other pages, they should be _redirected_ back to the login page
 * User should be able to create event passing generator name, description, rate, base cost and unlock value
 * User should be able to see a list of generators

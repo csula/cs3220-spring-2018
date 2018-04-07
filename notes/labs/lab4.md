@@ -17,12 +17,10 @@ Pull request should at least containing the following changed files:
 Follow http://www.vogella.com/tutorials/EclipseGradle/article.html to install
 Eclipse Gradle plugin.
 
-### Why is the `Event.java` fields all final?
+Or
 
-`final` makes sure that the variable cannot be re-assigned through out the entire
-runtime. In general, it's better practice to keep variable final so you can write
-more predictable code. If you have to _mutate_ variable, I suggest you to
-reconstruct another object and assign the list index to this item instead.
+You can run the tests through the command line application through the
+`./gradlew check`
 
 ## Descriptions
 
@@ -43,7 +41,7 @@ And your mission is to create Java Servlets that:
 ## Get Started
 
 Download the starter code from 
-https://github.com/rcliao/cookie-clicker/releases/tag/lab4-2
+https://github.com/rcliao/cookie-clicker/releases/tag/lab4-7
 
 Once downloaded, you have a couple files you have to pay attention to:
 
