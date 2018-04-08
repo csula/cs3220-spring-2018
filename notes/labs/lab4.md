@@ -22,6 +22,12 @@ Or
 You can run the tests through the command line application through the
 `./gradlew check`
 
+### How do I build the Servlets when tests are failing in Gradle?
+
+```
+./gradlew -x build
+```
+
 ## Descriptions
 
 In this lab, we will pick up what we implemented back in exercise-2 with the
