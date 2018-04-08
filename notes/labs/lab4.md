@@ -12,6 +12,27 @@ Pull request should at least containing the following changed files:
 
 ## Common Q&A
 
+### Overall roadmap
+
+```
+* DAOImpl
+	* getAll
+	* getById
+	* add
+	* set
+	* remove
+
+* EventsServlet
+	* doGet (render HTML)
+	* doPost (adding)
+* EditEventServlet
+	* doPost (edit)
+* RemoveEventServlet
+	* doPost (delete)
+
+* copy `app.css` to "src/main/webapps" (or "WebContent" in Eclipse)
+```
+
 ### I use Eclipse, and this lab requires Gradle. What do I do?
 
 Follow http://www.vogella.com/tutorials/EclipseGradle/article.html to install
