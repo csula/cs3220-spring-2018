@@ -49,7 +49,7 @@ The schedule below is tentative and is subject to change.
 | 12 [04/14]         | [JSP & JSTL][6] | [Lab 5][20], [Homework 2][13] |
 | 13 [04/21]         | No class |  |
 | 14 [04/28]         | [MySQL][7] | [Lab 6][21] |
-| 15 [04/05]         | [Database][7] | [Homework 3][14], [Lab 7][22] |
+| 15 [05/05]         | [Database][7] | [Homework 3][14], [Lab 7][22] |
 | 16 [05/12]         | [Web Architecture][8] & [Java Web Framework][10] | [Homework 4][15] |
 | Final [05/19]      | [Final][11] |  |
 
