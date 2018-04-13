@@ -28,7 +28,7 @@ Pull request should at least containing the following changed files:
 * EditEventServlet
 	* doPost (edit)
 * RemoveEventServlet
-	* doPost (delete)
+	* doGet (delete)
 
 * copy `app.css` to "src/main/webapps" (or "WebContent" in Eclipse)
 ```
