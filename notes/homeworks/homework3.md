@@ -55,6 +55,7 @@ then use GSON in your controller code like:
 
 ```
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public Controller {
     public void doGet () {
@@ -66,6 +67,8 @@ public Controller {
 }
 ```
 
+> Or find working example in this commit: https://github.com/rcliao/cookie-clicker/commit/70e16c16407c9d00de7fc3f0646aea10f64a82a9
+
 Once you have the JSON string, you can pass the JSON string back to the
 `game.jsp` file in the _request scope_ and render such JSON string in the _script_
 tag to pass JSON information to JavaScript.
@@ -73,6 +76,11 @@ tag to pass JSON information to JavaScript.
 From there, your `app.js` (that was created back in lab 2) should be able to take
 this meta information (containing of events and generator data) to render events
 and generators correctly.
+
+However, Gradle doesn't cover up the deployment to CS3 server. In order for the
+GSON to work in CS3, you will need to upload [GSON JAR
+file](https://github.com/rcliao/cookie-clicker/raw/master/lib/gson-2.8.2.jar)
+to `www/WEB-INF/lib` for cs3 server to get GSON working.
 
 ## Requirements
 
