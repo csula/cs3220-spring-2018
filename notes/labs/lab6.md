@@ -22,24 +22,31 @@ creator information to the generators and events meta data table.
 
 In specific, you will need to create the query for the following items:
 
-* Create `users` table
-* Create `generators` table
+1. Create `users` table
+2. Create `generators` table
     - `created_by` should be reference key to `users` table
-* Create `events` table
+3. Create `events` table
     - `created_by` should be reference key to `users` table
-* Create `quantities` table
+4. Create `quantities` table
     - Combination of `token` and `generator_id` should be unique
-* Insert sample records to `generators` like below
-* Insert sample records to `events` like below
-* Insert sample records to `users` like below
-* Insert sample records to `quantities` like below
-* Update generator record of name "grandma" to have `unlock_at` value of 10 and `rate` of 1
-* Find out the information of generators including quantity, name, description, rate, base_cost and unlock_at for token `80516ce4663c3bd0c8385309a2fe226e`
-* Find out which generator has the most `unlock_at` value
-* Find out all the generators with the order of `unlock_at` from lowest to highest
-* Delete an event called "sample event"
+5. Insert sample records to `users` like below
+6. Insert sample records to `generators` like below
+7. Insert sample records to `events` like below
+8. Insert sample records to `quantities` like below
+9. Update generator record of name "grandma" to have `unlock_at` value of 10 and `rate` of 1
+10. Find out the information of generators including quantity, name, description, rate, base_cost and unlock_at for token `80516ce4663c3bd0c8385309a2fe226e`
+11. Find out which generator has the most `unlock_at` value
+12. Find out all the generators with the order of `unlock_at` from lowest to highest
+13. Delete an event called "sample event"
 
 ### Sample Data
+
+#### Users
+
+| id | username | password |
+| :-- | :-- | :-- |
+| 1 | admin | cs3220password |
+| 2 | me | notapassword |
 
 #### Generators
 
@@ -57,13 +64,6 @@ In specific, you will need to create the query for the following items:
 | 2 | You can construct factory now! | Factory to produce cookies | 50 | 1 |
 | 3 | We've found cookies in deep mountain ... in the mine? | Mining cookies | 200 | 2 |
 | 4 | sample event | This is a sample event. Please delete me | 99999 | 2 |
-
-#### Users
-
-| id | username | password |
-| :-- | :-- | :-- |
-| 1 | admin | cs3220password |
-| 2 | me | notapassword |
 
 #### Quantities
 
