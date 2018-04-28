@@ -52,7 +52,7 @@ In specific, you will need to create the query for the following items:
 #### Events
 
 | id | name | description | trigger_at | created_by |
-| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| :-- | :-- | :-- | :-- | :-- |
 | 1 | Grandma shows up | You always know grandma likes to make cookies | 10 | 1 |
 | 2 | You can construct factory now! | Factory to produce cookies | 50 | 1 |
 | 3 | We've found cookies in deep mountain ... in the mine? | Mining cookies | 200 | 2 |
