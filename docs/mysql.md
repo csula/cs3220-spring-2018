@@ -370,14 +370,14 @@ both join tables
 
 * Aka. Right Join
 
-![Right Outer Join example](imgs/database-right-outer-join-example.png)
+![Right Outer Join example](https://raw.githubusercontent.com/csula/cs3220-spring-2018/master/notes/imgs/database-right-outer-join-example.png)
 
 
 #### Full Outer Join
 
 * Aka. Full Join
 
-![Full Join Example](imgs/database-full-join-example.png)
+![Full Join Example](https://raw.githubusercontent.com/csula/cs3220-spring-2018/master/notes/imgs/database-full-join-example.png)
 
 
 ### Example: Aggregation Functions
