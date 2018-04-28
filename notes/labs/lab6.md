@@ -31,21 +31,31 @@ website and see them all passing (or failing).
 In specific, you will need to create the query for the following items:
 
 1. Create `users` table
+    * Use `DESCRIBE users;` to test your result after creating the table
 2. Create `generators` table
     - `created_by` should be reference key to `users` table
+    * Use `DESCRIBE generators;` to test your result after creating the table
 3. Create `events` table
     - `created_by` should be reference key to `users` table
+    * Use `DESCRIBE events;` to test your result after creating the table
 4. Create `quantities` table
     - Combination of `token` and `generator_id` should be unique
+    * Use `DESCRIBE quantities;` to test your result after creating the table
 5. Insert sample records to `users` like below
+    * After insert, use `SELECT * FROM users;` to test the result
 6. Insert sample records to `generators` like below
+    * After insert, use `SELECT * FROM generators;` to test the result
 7. Insert sample records to `events` like below
+    * After insert, use `SELECT * FROM events;` to test the result
 8. Insert sample records to `quantities` like below
+    * After insert, use `SELECT * FROM quantities;` to test the result
 9. Update generator record of name "grandma" to have `unlock_at` value of 10 and `rate` of 1
+    * After update, use `SELECT * FROM generators;` to test the result
 10. Find out the information of generators including quantity, name, description, rate, base_cost and unlock_at for token `80516ce4663c3bd0c8385309a2fe226e`
 11. Find out which generator has the most `unlock_at` value
 12. Find out all the generators with the order of `unlock_at` from lowest to highest
 13. Delete an event called "sample event"
+    * After delete, use `SELECT * FROM events;` to test the result
 
 ### Sample Data
 
