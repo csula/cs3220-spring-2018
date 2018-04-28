@@ -18,6 +18,14 @@ In additional to the game meta data, you will also need to define the users tabl
 to store who is authorized to login. From the users table, you need to add up the
 creator information to the generators and events meta data table.
 
+Before we start diving into the detail, I've created an application for you
+to test your SQL logic here:
+http://104.131.155.18:8000/91961f18b3ec7bcff0fa2142f65fa17e
+
+Please use the SQL unit test website to confirm your result. In specific, I
+should be able to copy your submission and paste in the SQL unit test
+website and see them all passing (or failing).
+
 ## Specific
 
 In specific, you will need to create the query for the following items:
