@@ -101,4 +101,3 @@ In specific, you will need to create the query for the following items:
 ### Technical
 
 * Pass sql-unit-test test cases
-* Define the tables in CS3 MySQL server
