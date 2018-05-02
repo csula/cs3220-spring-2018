@@ -1,10 +1,10 @@
 # Database (Continued)
 
 
+
 ## Lecture
 
 * [JDBC](#jdbc)
-
 
 
 ## Labs
