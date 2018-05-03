@@ -4,7 +4,11 @@
 
 ## Lecture
 
-* [JDBC](#jdbc)
+* What
+* Example
+* JDBC Basic
+* Reading from JDBC
+* Writing using JDBC
 
 
 ## Labs
@@ -13,7 +17,7 @@
 
 
 
-## JDBC
+### JDBC
 
 
 ![JDBC interface and Java program](https://raw.githubusercontent.com/csula/cs3220-spring-2018/master/notes/imgs/database-jdbc.png)
@@ -24,6 +28,7 @@
 * JDBC Driver implements JDBC API for a particular DBMS
 
 
+
 ### Example: HelloJDBC.java
 
 * Load JDBC Driver
@@ -31,6 +36,7 @@
 * Execute queries
 * Process results
 * Handle exceptions (and close connections)
+
 
 
 ### JDBC Basics
@@ -52,6 +58,7 @@
         * `stmt.executeUpdate(String sql)`
 * Get result back
     * ResultSet
+
 
 
 ### DB Query Results
@@ -102,13 +109,16 @@ ResultSetMetaData meta = rs.getMetaData();
         * Column title for display or printout
 
 
+
 ### Handle Exceptions
 
 
 ```java
 catch (SQLException e) {
     throw new ServletException( e ); // to have Servlet to display error stack (dev only)
+    // for production usage, use "logger" to log exception
 } finally {
+    // remember to close connection
     try {
         if (c != null) c.close();
     } catch (SQLException e) {
@@ -116,6 +126,16 @@ catch (SQLException e) {
     }
 }
 ```
+
+
+```java
+// use Java 7 "try with resource" to auto close connections
+try (Connection connection = getConnection(); Statement statement = connection.statement(sql)) {
+} catch (SQLException) {
+    // handle exception
+}
+```
+
 
 
 ### Example: GuestBook (JDBC) -- display
@@ -134,6 +154,7 @@ catch (SQLException e) {
     * SQL Injection Attack
 
 
+
 ### Example: SQL Injection Attack
 
 * User input should never be trusted
@@ -142,6 +163,7 @@ catch (SQLException e) {
     * Password: something' OR ' 1
 * Prevent SQL injection attack?
     * User prepare statement
+
 
 
 ### Prepared statements
@@ -157,6 +179,7 @@ pstmt.setInt(3, 4);
 
 pstmt.executeUpdate();
 ```
+
 
 
 ### Beyond basic
