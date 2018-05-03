@@ -15,6 +15,15 @@ application scope DAO.
 
 The functionality should remain unchanged while refactoring.
 
+You may find the starter code from the release: https://github.com/rcliao/cookie-clicker/releases/tag/lab-7-1
+
+In specific, you will need to overwrite the following files:
+
+* `src/main/java/edu/csula/storage/Database.java`
+* `src/main/java/edu/csula/storage/mysql/Database.java`
+* `src/main/java/edu/csula/storage/mysql/EventsDAOImpl.java`
+* `src/test/java/edu/csula/storage/mysql/EventsDAOImplTest.java`
+
 At the end of this lab, your application should be reading data from MySQL rather
 than from memory (application scope). This implies that all the data you create
 in the application should be _persistent_ across the server restart.
