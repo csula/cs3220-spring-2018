@@ -26,4 +26,5 @@ JavaScript with passing the meta information through JSON format to JavaScript.
 ### Technical
 
 * Store Generators information in the MySQL database
+* Passing all unit tests
 * Application should be *fully* working on CS3 server

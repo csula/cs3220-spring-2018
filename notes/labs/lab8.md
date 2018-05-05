@@ -2,7 +2,6 @@
 
 ## Deliverables
 
-* Real time update
-* More interactions in the front end
+* Create Service layer for meta information
 
 ## Description
