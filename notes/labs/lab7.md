@@ -16,7 +16,7 @@ application scope DAO.
 The functionality should remain unchanged while refactoring.
 
 You may find the starter code from the release:
-https://github.com/rcliao/cookie-clicker/releases/tag/lab-7-1
+https://github.com/rcliao/cookie-clicker/releases/tag/lab-7-2
 
 In specific, you will need to create/overwrite the following files:
 
