@@ -17,6 +17,13 @@ Once this refactor is completed, the CS3 application should be fully working wit
 generators and events connecting to database. The front end should be running in
 JavaScript with passing the meta information through JSON format to JavaScript.
 
+You may download from the starter code from: https://github.com/rcliao/cookie-clicker/releases/tag/hw4
+
+Files changes from Lab 7:
+
+* src/main/java/edu/csula/storage/mysql/GeneratorsDAOImpl.java
+* src/test/java/edu/csula/storage/mysql/GeneratorsDAOImplTest.java
+
 ## Requirements
 
 ### Functional
