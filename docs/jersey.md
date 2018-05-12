@@ -9,6 +9,7 @@
 * RESTful services
 * Jersey
 * JavaScript integration
+* Docker
 
 
 
@@ -209,4 +210,20 @@ fetch(url, {
 	method: 'POST'
 }).then(resp => resp.json())
 .then(console.log);
+```
+
+
+
+## Docker
+
+
+```
+gradle war
+```
+
+
+```
+FROM tomcat:8.5
+
+COPY build/libs/{name}.war /usr/local/tomcat/webapps/{name}.war
 ```
