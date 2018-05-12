@@ -8,6 +8,7 @@
 
 * RESTful services
 * Jersey
+* JavaScript integration
 
 
 
@@ -179,3 +180,32 @@ public class HelloService {
     * Tell Jersey what data format the return value should be converted to
 * `@Consumes`
     * Tell Jersey what data format of the data in the request body
+
+
+## JavaScript integration
+
+* [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+* [Axios](https://github.com/axios/axios)
+
+
+### Example
+
+
+#### GET
+
+```
+fetch(url)
+	.then(resp => resp.json())
+	.then(console.log);
+```
+
+
+#### POST
+
+```
+fetch(url, {
+	body: JSON.stringify(data),
+	method: 'POST'
+}).then(resp => resp.json())
+.then(console.log);
+```
