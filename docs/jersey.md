@@ -182,6 +182,7 @@ public class HelloService {
     * Tell Jersey what data format of the data in the request body
 
 
+
 ## JavaScript integration
 
 * [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
