@@ -109,8 +109,56 @@ compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
 ```
 
 
+### Jersey Dependency
+
+
 ```
+// JAX-RS -- Jersey
 compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0.1'
+// JAX-RS -- Jersey Servlet
+compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet', version: '2.25'
+// JAX-RS -- Jersey Jackson
+compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.25.1'
+```
+
+
+### Jersey configuration
+
+
+```
+package edu.csula.web;
+
+import javax.ws.rs.ApplicationPath;
+import org.glassfish.jersey.server.ResourceConfig;
+
+@ApplicationPath("/api")
+public class ServiceApplication extends ResourceConfig {
+    public ServiceApplication() {
+        packages("edu.csula.web.services");
+    }
+}
+```
+
+
+### Example: Hello Service
+
+
+```
+package edu.csula.web.services;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("/v1/hello")
+public class HelloService {
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String sayHello() {
+        return "Hello, JAX-RS";
+    }
+}
 ```
 
 
