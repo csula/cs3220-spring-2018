@@ -43,18 +43,10 @@ how to implement techniques learned in class.
 
 ## Grading Scale
 
-* A: 94 to 100
-* A-: 90 to 93
-* B+: 85 to 89
-* B: 80 to 84
-* B-: 77 to 79
-* C+: 74 to 76
-* C: 70 to 73
-* C-: 67 to 79
-* D+: 64 to 66
-* D: 60 to 69
-* D-: 55 to 59
-* F: 0 to 54
+* A: 90 to 100
+* B: 80 to 90
+* C: 60 to 80
+* NC: 0 to 60
 
 ## Lab rules
 
