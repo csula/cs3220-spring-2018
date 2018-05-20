@@ -43,10 +43,15 @@ how to implement techniques learned in class.
 
 ## Grading Scale
 
-* A: 90 to 100
-* B: 80 to 90
-* C: 60 to 80
-* NC: 0 to 60
+* A: 94 to 100
+* A-: 90 to 93
+* B+: 85 to 89
+* B: 80 to 84
+* B-: 77 to 79
+* C+: 74 to 76
+* C: 60 to 73
+**Undergraduate students are required to obtain a grade 60 or above to pass the course**
+* NC: 0 to 59
 
 ## Lab rules
 
