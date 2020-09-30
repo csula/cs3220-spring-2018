@@ -1,8 +1,8 @@
-# CS 3220 - Intro to Web Programming
+# CS 3220 - Introduction to Web Programming
 
-# Intro
+# Introduction
 
-Welcome to intro to web programming. In this class, we will learn
+Welcome to introduction to web programming. In this class, we will learn
 how to build a web application with Java together from the front-end to 
 back-end and putting everything together at the end.
 
